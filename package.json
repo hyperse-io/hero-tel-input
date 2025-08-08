@@ -1,0 +1,90 @@
+{
+  "name": "@hyperse/hero-tel-input",
+  "version": "0.0.1",
+  "description": "A hero-ui tel input component",
+  "homepage": "https://github.com/hyperse-io/hero-tel-input",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperse-io/hero-tel-input",
+    "directory": "packages/hero-tel-input"
+  },
+  "author": {
+    "name": "Hyperse",
+    "url": "https://github.com/hyperse-io"
+  },
+  "type": "module",
+  "license": "SEE LICENSE IN FILE 'LICENSE'",
+  "keywords": [
+    "heroui",
+    "hero-tel-input",
+    "typescript",
+    "react"
+  ],
+  "exports": {
+    ".": {
+      "import": "./index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./bin/",
+    "./dist/",
+    "./index.js"
+  ],
+  "workspaces": [
+    "website",
+    "./"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "lint": "eslint .",
+    "lint-fix": "yarn lint --fix",
+    "test": "run-s test-unit",
+    "test-unit": "vitest run",
+    "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "lint-staged-files": "lint-staged --allow-empty",
+    "changeset": "changeset",
+    "release": "yarn build && changeset publish",
+    "cz": "cz",
+    "prepare": "husky"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "@changesets/changelog-github": "0.5.1",
+    "@changesets/cli": "2.29.5",
+    "@commitlint/cli": "19.8.1",
+    "@commitlint/config-conventional": "19.8.1",
+    "@hyperse/eslint-config-hyperse": "^1.4.5",
+    "@hyperse/exec-program": "^1.2.1",
+    "@types/node": "^24.2.0",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "commitizen": "4.3.1",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^9.32.0",
+    "husky": "9.1.7",
+    "lint-staged": "16.1.4",
+    "npm-run-all": "^4.1.5",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.2",
+    "vite": "^7.1.1",
+    "vitest": "^3.2.4"
+  },
+  "peerDependencies": {
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "yarn@4.3.1"
+}

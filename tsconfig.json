@@ -1,0 +1,23 @@
+{
+  "extends": "@hyperse/eslint-config-hyperse/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "rootDir": ".",
+    "outDir": "dist",
+    "types": ["vitest/globals"],
+    "paths": {},
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "isolatedModules": true,
+    "noImplicitThis": false,
+    "jsx": "preserve"
+  },
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+    "dist",
+    "build",
+    "**/website/**/*.ts",
+    "**/website/**/*.tsx"
+  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+}
