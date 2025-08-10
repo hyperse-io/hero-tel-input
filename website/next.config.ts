@@ -30,6 +30,13 @@ export default createNextConfig(
       unoptimized:
         buildEnv.NEXT_BUILD_ENV_OUTPUT === 'export' ? true : undefined,
     },
+    webpack: (config) => {
+      config.resolve.alias = {
+        ...config.resolve.alias,
+        '@hyperse/hero-tel-input': require('path').resolve(__dirname, '../src/index.ts'),
+      };
+      return config;
+    },
   },
   [withNextra]
 );

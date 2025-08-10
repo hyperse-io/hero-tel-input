@@ -1,0 +1,106 @@
+'use client';
+
+import { useRef } from 'react';
+import { useForm } from 'react-hook-form';
+import z from 'zod';
+import { Button, Chip } from '@heroui/react';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { HeroTelInput, matchIsValidTel } from '@hyperse/hero-tel-input';
+
+const ResetPwdSchema = z.object({
+  phoneNumber: z
+    .string({
+      message: 'The phone number is required.',
+    })
+    .refine(
+      (val) => {
+        const result = matchIsValidTel(val);
+        console.log('val', val, result);
+        return result;
+      },
+      {
+        message: 'The phone number is invalid.',
+      }
+    ),
+});
+
+export type ResetPwdInput = z.infer<typeof ResetPwdSchema>;
+
+export default function Pages() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const { handleSubmit, formState, register } = useForm<ResetPwdInput>({
+    resolver: zodResolver(ResetPwdSchema),
+    defaultValues: {},
+  });
+
+  const onSubmit = (data: ResetPwdInput) => {
+    console.log('data', data);
+  };
+
+  // useEffect(() => {
+  //   if (inputRef.current) {
+  //     console.log('inputRef', inputRef.current);
+  //     inputRef.current.focus();
+  //   }
+  // }, [inputRef]);
+
+  return (
+    <>
+      <div className="flex h-full w-full flex-col items-center justify-center gap-8 overflow-auto p-12">
+        <Chip color="primary" variant="flat">
+          Hyperse
+        </Chip>
+        <HeroTelInput
+          ref={inputRef}
+          classNames={{
+            dropdown: {},
+            dropdownMenu: {
+              // base: ' max-h-[500px]',
+            },
+          }}
+          // disableDropdown
+          langOfCountryName="en"
+          // value="+8618093798809"
+          defaultCountry="AF"
+          focusOnSelectCountry
+          forceCallingCode={false}
+          onChange={(event, info) => {
+            console.log(event, matchIsValidTel(event.target.value), info);
+          }}
+        />
+        <form
+          className="flex w-full flex-col gap-3"
+          onSubmit={handleSubmit(onSubmit)}
+        >
+          {/* <HeroTelInput
+            langOfCountryName="en"
+            defaultCountry="CN"
+            forceCallingCode={true}
+            isRequired
+            variant="flat"
+            size="lg"
+            labelPlacement="outside"
+            {...register('phoneNumber')}
+            placeholder="Phone Number"
+            errorMessage={formState.errors.phoneNumber?.message}
+            isInvalid={!!formState.errors.phoneNumber}
+          /> */}
+
+          {/* <Input
+            isRequired
+            variant="flat"
+            size="lg"
+            labelPlacement="outside"
+            {...register('password')}
+            errorMessage={formState.errors.password?.message}
+            isInvalid={!!formState.errors.password}
+          /> */}
+
+          <Button className="w-full" color="primary" type="submit">
+            Submit
+          </Button>
+        </form>
+      </div>
+    </>
+  );
+}

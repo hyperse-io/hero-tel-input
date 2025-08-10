@@ -7,7 +7,7 @@ import { Footer, Layout, Link, Navbar } from 'nextra-theme-docs';
 import cn from 'clsx';
 import { Logo } from '@/components/Icons/Logo';
 import xyflow from './showcase/_logos/xyflow.png';
-import './globals.css';
+import '../style/globals.css';
 
 export const metadata: Metadata = {
   description: 'Make beautiful websites with Next.js & MDX.',

@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@heroui/react": "^2.8.2",
+    "@hyperse/hero-tel-input": "workspace:*",
     "@tailwindcss/typography": "^0.5.16",
     "clsx": "^2.1.1",
     "framer-motion": "^12.23.12",

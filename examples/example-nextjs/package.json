@@ -1,0 +1,69 @@
+{
+  "name": "@example/example-nextjs",
+  "version": "1.1.8",
+  "private": true,
+  "homepage": "https://github.com/hyperse-io/code-inspector/examples/example-nextjs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hyperse-io/code-inspector/examples/example-nextjs",
+    "directory": "examples/example-nextjs"
+  },
+  "author": {
+    "name": "Hyperse",
+    "url": "https://github.com/hyperse-io"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@heroui/react": "^2.8.2",
+    "@hookform/resolvers": "^5.0.1",
+    "@hyperse/hero-tel-input": "workspace:*",
+    "framer-motion": "^12.23.12",
+    "next": "^15.4.6",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "react-hook-form": "^7.62.0",
+    "react-refresh": "^0.17.0",
+    "zod": "^4.0.17"
+  },
+  "devDependencies": {
+    "@babel/core": "7.27.4",
+    "@babel/preset-env": "7.27.2",
+    "@babel/preset-react": "7.27.1",
+    "@babel/preset-typescript": "7.27.1",
+    "@hyperse/next-config": "^1.0.3",
+    "@rspack/cli": "1.4.0",
+    "@rspack/core": "1.4.0",
+    "@rspack/plugin-react-refresh": "1.4.3",
+    "@swc/helpers": "0.5.17",
+    "@tailwindcss/postcss": "^4.1.8",
+    "@types/node": "22.15.29",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@zthxxx/tsconfig": "1.0.5",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.4",
+    "postcss-loader": "8.1.1",
+    "rimraf": "6.0.1",
+    "tailwindcss": "^4.1.11",
+    "ts-node": "10.9.2",
+    "typescript": "5.8.3"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

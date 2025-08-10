@@ -8,6 +8,10 @@
       "name": "website",
       "path": "website",
     },
+    {
+      "name": "example-nextjs",
+      "path": "examples/example-nextjs",
+    },
   ],
   "extensions": {
     "recommendations": [
