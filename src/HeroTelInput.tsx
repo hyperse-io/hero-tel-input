@@ -80,9 +80,8 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     });
 
     setTimeout(() => {
-      console.log(222, new Date().getTime());
       inputRef.current?.focus();
-    }, 0);
+    }, 500);
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -94,7 +93,6 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     ? removeOccurrence(inputValue, isoCodeWithPlus).trimStart()
     : inputValue;
 
-  console.log(111, new Date().getTime());
   const triggerButton = useMemo(() => {
     return (
       <FlagButton
@@ -117,18 +115,6 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
 
   return (
     <>
-      <FlagDropdown
-        isoCode={isoCode}
-        onSelectCountry={handleChangeCountry}
-        excludedCountries={excludedCountries}
-        onlyCountries={onlyCountries}
-        langOfCountryName={langOfCountryName}
-        continents={continents}
-        preferredCountries={preferredCountries}
-        getFlagElement={getFlagElement}
-        classNames={classNames}
-        triggerButton={triggerButton}
-      />
       <Input
         id="hero-tel-input"
         type="tel"
@@ -139,6 +125,20 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
         onDoubleClick={handleDoubleClick}
         onFocus={handleFocus}
         onCopy={handleCopy}
+        startContent={
+          <FlagDropdown
+            isoCode={isoCode}
+            onSelectCountry={handleChangeCountry}
+            excludedCountries={excludedCountries}
+            onlyCountries={onlyCountries}
+            langOfCountryName={langOfCountryName}
+            continents={continents}
+            preferredCountries={preferredCountries}
+            getFlagElement={getFlagElement}
+            classNames={classNames}
+            triggerButton={triggerButton}
+          />
+        }
         {...rest}
       />
     </>
