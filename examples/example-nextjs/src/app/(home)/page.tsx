@@ -2,7 +2,7 @@
 
 import { useRef } from 'react';
 import { useForm } from 'react-hook-form';
-import z from 'zod';
+import z from 'zod/v3';
 import { Button, Chip } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HeroTelInput } from '@hyperse/hero-tel-input';
