@@ -53,6 +53,7 @@ export const FlagButton = (props: FlagButtonProps) => {
     <>
       {disableDropdown && (
         <Button
+          tabIndex={-1}
           variant="light"
           size="sm"
           className={cn('min-w-10 px-1', className)}
