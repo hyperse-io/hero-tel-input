@@ -15,6 +15,15 @@
     "noImplicitAny": false,
     "types": ["@types/node", "vitest/globals"]
   },
-  "exclude": ["**/node_modules", "**/.*/", "dist", "build"],
+  "exclude": [
+    "**/node_modules",
+    "**/.*/",
+    "dist",
+    "build",
+    "**/website/**/*.ts",
+    "**/website/**/*.tsx",
+    "**/example-nextjs/**/*.ts",
+    "**/example-nextjs/**/*.tsx"
+  ],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }
