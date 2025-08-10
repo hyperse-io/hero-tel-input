@@ -22,8 +22,8 @@
     "build",
     "**/website/**/*.ts",
     "**/website/**/*.tsx",
-    "**/example-nextjs/**/*.ts",
-    "**/example-nextjs/**/*.tsx"
+    "**/examples/**/*.ts",
+    "**/examples/**/*.tsx"
   ],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

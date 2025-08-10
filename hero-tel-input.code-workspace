@@ -49,6 +49,7 @@
     "eslint.workingDirectories": [
       "./",
       "./website",
+      "./examples/example-nextjs"
     ],
     "typescript.tsdk": "root/node_modules/typescript/lib",
     "[jsonc]": {
