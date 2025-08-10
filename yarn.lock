@@ -3753,6 +3753,43 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@hyperse/hero-tel-input-website@workspace:website":
+  version: 0.0.0-use.local
+  resolution: "@hyperse/hero-tel-input-website@workspace:website"
+  dependencies:
+    "@changesets/changelog-github": "npm:0.5.1"
+    "@commitlint/cli": "npm:^19.8.1"
+    "@commitlint/config-conventional": "npm:^19.8.1"
+    "@heroui/react": "npm:^2.7.10"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.5"
+    "@hyperse/next-config": "npm:^1.0.4"
+    "@tailwindcss/postcss": "npm:^4.1.10"
+    "@tailwindcss/typography": "npm:^0.5.16"
+    "@types/node": "npm:^24.0.3"
+    "@types/react": "npm:^19.1.8"
+    "@types/react-dom": "npm:^19.1.6"
+    clsx: "npm:^2.1.1"
+    commitizen: "npm:^4.3.1"
+    cross-env: "npm:^7.0.3"
+    cz-conventional-changelog: "npm:^3.3.0"
+    eslint: "npm:^9.29.0"
+    framer-motion: "npm:^12.18.1"
+    lint-staged: "npm:^16.1.2"
+    next: "npm:^15.3.4"
+    next-sitemap: "npm:^4.2.3"
+    nextra: "npm:alpha"
+    nextra-theme-docs: "npm:alpha"
+    pagefind: "npm:^1.3.0"
+    postcss: "npm:^8.5.6"
+    react: "npm:^19.1.0"
+    react-dom: "npm:^19.1.0"
+    tailwindcss: "npm:^4.1.10"
+    typescript: "npm:^5.8.3"
+    vitest: "npm:^3.2.4"
+    zod: "npm:^3.25.67"
+  languageName: unknown
+  linkType: soft
+
 "@hyperse/hero-tel-input@workspace:*, @hyperse/hero-tel-input@workspace:.":
   version: 0.0.0-use.local
   resolution: "@hyperse/hero-tel-input@workspace:."
@@ -3802,43 +3839,6 @@ __metadata:
   checksum: 10/7fa24da5e0f728a9265a737829672c25be961fb73ebfaaf654432600c09106e1177e20ffc87293d71cd8a378146c8bb2d442c2cf60c51ef8349e3fe288d7e151
   languageName: node
   linkType: hard
-
-"@hyperse/nextra-monorepo-starter-website@workspace:website":
-  version: 0.0.0-use.local
-  resolution: "@hyperse/nextra-monorepo-starter-website@workspace:website"
-  dependencies:
-    "@changesets/changelog-github": "npm:0.5.1"
-    "@commitlint/cli": "npm:^19.8.1"
-    "@commitlint/config-conventional": "npm:^19.8.1"
-    "@heroui/react": "npm:^2.7.10"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.5"
-    "@hyperse/next-config": "npm:^1.0.4"
-    "@tailwindcss/postcss": "npm:^4.1.10"
-    "@tailwindcss/typography": "npm:^0.5.16"
-    "@types/node": "npm:^24.0.3"
-    "@types/react": "npm:^19.1.8"
-    "@types/react-dom": "npm:^19.1.6"
-    clsx: "npm:^2.1.1"
-    commitizen: "npm:^4.3.1"
-    cross-env: "npm:^7.0.3"
-    cz-conventional-changelog: "npm:^3.3.0"
-    eslint: "npm:^9.29.0"
-    framer-motion: "npm:^12.18.1"
-    lint-staged: "npm:^16.1.2"
-    next: "npm:^15.3.4"
-    next-sitemap: "npm:^4.2.3"
-    nextra: "npm:alpha"
-    nextra-theme-docs: "npm:alpha"
-    pagefind: "npm:^1.3.0"
-    postcss: "npm:^8.5.6"
-    react: "npm:^19.1.0"
-    react-dom: "npm:^19.1.0"
-    tailwindcss: "npm:^4.1.10"
-    typescript: "npm:^5.8.3"
-    vitest: "npm:^3.2.4"
-    zod: "npm:^3.25.67"
-  languageName: unknown
-  linkType: soft
 
 "@hyperse/ts-node@npm:^1.0.3":
   version: 1.0.3
