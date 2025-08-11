@@ -1,0 +1,20 @@
+---
+title: API Reference
+description: Learn about the props and methods available in Hyperse Hero Tel Input.
+---
+
+import { generateDefinition, TSDoc } from 'nextra/tsdoc';
+
+# API Reference
+
+This article discusses the API and props of `HeroTelInput`. Props are defined within `HeroTelInputProps`.
+
+<TSDoc
+  definition={generateDefinition({
+    code: `
+import type { HeroTelInputProps ,BaseInputProps } from '@hyperse/hero-tel-input'
+type MyProps = Omit<HeroTelInputProps,keyof BaseInputProps>
+export default MyProps
+`,
+  })}
+/>

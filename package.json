@@ -45,6 +45,7 @@
     "test": "run-s test-unit",
     "test-unit": "vitest run",
     "typecheck": "tsc --project ./tsconfig.json --noEmit",
+    "g:build-website": "yarn workspace @hyperse/hero-tel-input-website run build:ghpage",
     "lint-staged-files": "lint-staged --allow-empty",
     "changeset": "changeset",
     "release": "yarn build && changeset publish",

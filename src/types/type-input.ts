@@ -44,7 +44,7 @@ export interface HeroTelInputInfo {
 /***
  * Base input props, omitting internal fields.
  */
-type BaseInputProps = Omit<
+export type BaseInputProps = Omit<
   InputProps,
   | 'onChange'
   | 'select'
@@ -60,11 +60,23 @@ type BaseInputProps = Omit<
  */
 export type ForceCallingCodeWithDefaultCountry =
   | {
+      /**
+       * Displays the calling code (e.g: +33) as read-only next to the flag and with a divider instead of as part of the input field. Needs defaultCountry prop to be defined or will default to US.
+       */
       forceCallingCode: true;
+      /**
+       * Sets the selected country on component mount
+       */
       defaultCountry: HeroTelInputCountry;
     }
   | {
+      /**
+       * Displays the calling code (e.g: +33) as read-only next to the flag and with a divider instead of as part of the input field. Needs defaultCountry prop to be defined or will default to US.
+       */
       forceCallingCode?: false | undefined;
+      /**
+       * Sets the selected country on component mount
+       */
       defaultCountry?: HeroTelInputCountry;
     };
 
@@ -73,35 +85,66 @@ export type ForceCallingCodeWithDefaultCountry =
  */
 export type HeroTelInputProps = BaseInputProps &
   ForceCallingCodeWithDefaultCountry & {
-    /** Only allow these countries */
+    /**
+     * Country codes to be included in the list of countries.
+     */
     onlyCountries?: HeroTelInputCountry[];
-    /** Exclude these countries */
+    /**
+     * Country codes to be excluded of the list of countries.
+     */
     excludedCountries?: HeroTelInputCountry[];
-    /** Show these countries at top */
+    /**
+     * Country codes to be highlighted to the top of the list of countries.
+     */
     preferredCountries?: HeroTelInputCountry[];
-    /** Language for country names */
+    /**
+     * An Intl locale to translate country names (see Intl locales). All countries will be translated in this language.
+     */
     langOfCountryName?: string;
-    /** Input value */
+    /**
+     * The value of the input.
+     */
     value?: string | undefined;
-    /** Disable formatting */
+    /**
+     * Remove format (spaces..) from the input value.
+     */
     disableFormatting?: boolean;
-    /** Disable country dropdown */
-    disableDropdown?: boolean;
-    /** Focus input after country select */
+    /**
+     * Autofocus the input when the user selects a country in the list.
+     */
     focusOnSelectCountry?: boolean;
-    /** Only allow countries in these continents */
+    /**
+     * Continent codes to include a group of countries.
+     */
     continents?: HeroTelInputContinent[];
-    /** Blur event callback */
+    /**
+     * Gets called when the input loses focus.
+     */
     onBlur?: (
       event: React.FocusEvent<HTMLInputElement>,
       info: HeroTelInputInfo
     ) => void;
-    /** Value change callback */
+    /**
+     * Gets called once the user updates the tel value.
+     *
+     * The callback gives you 2 parameters:
+     *
+     * - The new tel value stringified
+     * - An object of different useful informations about the tel (country, extension, etc..)
+     */
     onChange?: HeroTelInputOnChange;
-    /** Custom flag element renderer */
+    /**
+     * By default, the flag icons are loaded from https://flagcdn.com. But, with this prop, you can customize the img element, or use another CDN, or use SVG, etc..
+     *
+     * getFlagElement empower you to use your own flag library, CDN, SVGs, etc. For those who desire offline functionality, it's possible as you can pass your own SVG components (no internet connection required).
+     */
     getFlagElement?: GetFlagElement;
-    /** Element for unknown flag */
+    /**
+     * This prop let you to customize the unknown flag, changed the width or height, use CDN or SVG component, etc..
+     */
     unknownFlagElement?: React.ReactNode;
-    /** Custom class names for dropdown */
+    /**
+     * Custom class names for dropdown.
+     */
     classNames?: FlagDropdownClassNames;
   };

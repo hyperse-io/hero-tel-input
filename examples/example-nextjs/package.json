@@ -22,7 +22,7 @@
   "dependencies": {
     "@heroui/react": "^2.8.2",
     "@hookform/resolvers": "^5.0.1",
-    "@hyperse/hero-tel-input": "workspace:*",
+    "@hyperse/hero-tel-input": "file:../hero-tel-input/dist/index.js",
     "framer-motion": "^12.23.12",
     "next": "^15.4.6",
     "react": "^19.1.1",

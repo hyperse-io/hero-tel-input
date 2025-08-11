@@ -2986,7 +2986,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@heroui/react@npm:^2.7.10, @heroui/react@npm:^2.8.2":
+"@heroui/react@npm:^2.8.1, @heroui/react@npm:^2.8.2":
   version: 2.8.2
   resolution: "@heroui/react@npm:2.8.2"
   dependencies:
@@ -3761,9 +3761,12 @@ __metadata:
     "@changesets/changelog-github": "npm:0.5.1"
     "@commitlint/cli": "npm:^19.8.1"
     "@commitlint/config-conventional": "npm:^19.8.1"
-    "@heroui/react": "npm:^2.7.10"
+    "@heroui/react": "npm:^2.8.1"
     "@hyperse/eslint-config-hyperse": "npm:^1.4.5"
+    "@hyperse/hero-tel-input": "workspace:*"
     "@hyperse/next-config": "npm:^1.0.4"
+    "@iconify/react": "npm:^6.0.0"
+    "@lottiefiles/dotlottie-react": "npm:^0.14.3"
     "@tailwindcss/postcss": "npm:^4.1.10"
     "@tailwindcss/typography": "npm:^0.5.16"
     "@types/node": "npm:^24.0.3"
@@ -3852,6 +3855,17 @@ __metadata:
     package-up: "npm:^5.0.0"
     tsconfig-paths: "npm:^4.2.0"
   checksum: 10/2579c15cac7bc15387e6e1157f6d2aaf7f4db119b0ce6f58168895750d0836accb65188ac3f52e8f6d97941ee203eebabd73c7daae8184d9b66a255b5e08f15f
+  languageName: node
+  linkType: hard
+
+"@iconify/react@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "@iconify/react@npm:6.0.0"
+  dependencies:
+    "@iconify/types": "npm:^2.0.0"
+  peerDependencies:
+    react: ">=16"
+  checksum: 10/050371be1a4748f9e2bb0c44f9b62a744ecddd2435d18ea7028b2442780cd150907d325c9c249397e7b774170f65549a7ea61e021b4da2a0f45e20c7dac04a3a
   languageName: node
   linkType: hard
 
@@ -4270,6 +4284,24 @@ __metadata:
   version: 2.0.5
   resolution: "@leichtgewicht/ip-codec@npm:2.0.5"
   checksum: 10/cb98c608392abe59457a14e00134e7dfa57c0c9b459871730cd4e907bb12b834cbd03e08ad8663fea9e486f260da7f1293ccd9af0376bf5524dd8536192f248c
+  languageName: node
+  linkType: hard
+
+"@lottiefiles/dotlottie-react@npm:^0.14.3":
+  version: 0.14.4
+  resolution: "@lottiefiles/dotlottie-react@npm:0.14.4"
+  dependencies:
+    "@lottiefiles/dotlottie-web": "npm:0.49.0"
+  peerDependencies:
+    react: ^17 || ^18 || ^19
+  checksum: 10/8352b94564712a08c0bd11229025a48b479c2a8b3cdf1b6552aa3fa57c19973152ac6d0c5fd166228209b499057a8c180acb5ce9531361640f4417a6dedecc94
+  languageName: node
+  linkType: hard
+
+"@lottiefiles/dotlottie-web@npm:0.49.0":
+  version: 0.49.0
+  resolution: "@lottiefiles/dotlottie-web@npm:0.49.0"
+  checksum: 10/4180e949debdcec475dbe92baf4d652925a0c36441973d99fde0a5e368fc6756a993ce2016e66d4f63adaf5195a2e930ebdaf88053f1fa5cc5878816b769a74d
   languageName: node
   linkType: hard
 

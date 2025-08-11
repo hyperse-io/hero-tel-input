@@ -67,7 +67,7 @@
   display: none;
 }
 #highlighting-card {
-  min-height: 300px;
+  min-height: 200px;
   background-size: 634px;
   background-position: -6px calc(100% + 4px);
   background-repeat: no-repeat;

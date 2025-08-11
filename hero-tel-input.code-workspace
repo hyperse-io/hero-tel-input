@@ -24,7 +24,6 @@
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": "explicit",
       "source.organizeImports": "never",
-      "source.removeUnusedImports": "always",
     },
     "files.associations": {
       "*.css": "tailwindcss",
