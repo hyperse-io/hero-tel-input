@@ -77,21 +77,20 @@ export const FlagDropdown = (props: FlagDropdownProps) => {
     <Dropdown classNames={{ ...dropdown }} {...restDropdownProps}>
       <DropdownTrigger>{triggerButton}</DropdownTrigger>
       <DropdownMenu
-        aria-label="Country selection"
         classNames={{
           ...dropdownMenu,
           base: cn('max-h-[50dvh] overflow-y-auto', dropdownMenu?.base),
         }}
-        selectedKeys={isoCode ? [isoCode] : []}
-        autoFocus
+        defaultSelectedKeys={isoCode ? [isoCode] : []}
+        autoFocus="first"
         shouldFocusWrap
       >
         {countriesFiltered.map((isoCodeItem) => {
           return (
             <DropdownItem
-              autoFocus
               key={isoCodeItem}
               value={isoCodeItem}
+              aria-label={displayNames.of(isoCodeItem)}
               textValue={displayNames.of(isoCodeItem)}
               startContent={getFlagElement(isoCodeItem, {
                 countryName: displayNames.of(isoCodeItem) || '',
