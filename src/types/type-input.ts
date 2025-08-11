@@ -98,6 +98,10 @@ export type HeroTelInputProps = BaseInputProps &
      */
     preferredCountries?: HeroTelInputCountry[];
     /**
+     * No country list / The current flag is a span instead of a button.
+     */
+    disableDropdown?: boolean;
+    /**
      * An Intl locale to translate country names (see Intl locales). All countries will be translated in this language.
      */
     langOfCountryName?: string;

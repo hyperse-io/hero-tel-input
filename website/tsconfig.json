@@ -18,10 +18,9 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": "./",
-    "types": ["vitest/globals"],
     "paths": {
       "@/*": ["./src/*"],
-      "@hyperse/hero-tel-input": ["../src/index.js"]
+      "@hyperse/hero-tel-input/*": ["../dist/*"]
     },
     "plugins": [
       {

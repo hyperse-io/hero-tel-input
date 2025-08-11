@@ -35,13 +35,11 @@
   ],
   "workspaces": [
     "website",
-    "examples/*",
     "./"
   ],
   "scripts": {
     "build": "tsup",
     "build-website": "yarn workspace @hyperse/hero-tel-input-website run build:ghpage",
-    "dev": "yarn workspace @hyperse/hero-tel-input-example-nextjs run dev",
     "lint": "eslint .",
     "lint-fix": "yarn lint --fix",
     "test": "run-s test-unit",

@@ -4,8 +4,8 @@ import type { FC } from 'react';
 import { Link } from 'nextra-theme-docs';
 import { Feature, Features } from '@/components/Features';
 import { Card, HeroUIProvider } from '@heroui/react';
+import { HeroTelInput } from '@hyperse/hero-tel-input/index.js';
 import { Icon } from '@iconify/react';
-import { HeroTelInput } from '../../../../../dist/index.js';
 import styles from './page.module.css';
 import './page.css';
 
