@@ -4,12 +4,16 @@
     "baseUrl": ".",
     "rootDir": ".",
     "outDir": "dist",
-    "types": ["vitest/globals"],
-    "paths": {},
-    "lib": ["dom", "dom.iterable", "esnext"],
+    "lib": ["dom", "esnext"],
+    "declaration": true,
+    "skipLibCheck": true,
+    "strict": true,
     "isolatedModules": true,
-    "noImplicitThis": false,
-    "jsx": "preserve"
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "esModuleInterop": true,
+    "noImplicitAny": false,
+    "types": ["@types/node", "vitest/globals"]
   },
   "exclude": [
     "**/node_modules",
@@ -17,7 +21,9 @@
     "dist",
     "build",
     "**/website/**/*.ts",
-    "**/website/**/*.tsx"
+    "**/website/**/*.tsx",
+    "**/examples/**/*.ts",
+    "**/examples/**/*.tsx"
   ],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

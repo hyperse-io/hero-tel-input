@@ -1,0 +1,47 @@
+---
+title: Getting Started
+description:
+  Get started with Hyperse Hero Tel Input and start building your next
+  international telephone input form.
+---
+
+# Getting Started
+
+## Installation
+
+```sh npm2yarn
+npm install @hyperse/hero-tel-input
+```
+
+## Usage
+
+```tsx
+import { HeroTelInput } from '@hyperse/hero-tel-input';
+
+const MyComponent = () => {
+  const [phone, setPhone] = React.useState('');
+
+  const handleChange = (newPhone: string, info: HeroTelInputInfo) => {
+    setPhone(newPhone);
+  };
+
+  return <HeroTelInput value={phone} onChange={handleChange} />;
+};
+```
+
+## Example
+
+<iframe
+  style={{
+    width: '100%',
+    minHeight: '500px',
+    borderRadius: '8px',
+  }}
+  src={
+    'https://stackblitz.com/fork/github/hyperse-io/hero-tel-input/tree/main/examples/example-nextjs?title=hps-hero-tel-input-example&startScript=dev&embed=1&theme=dark'
+  }
+/>
+
+## Congratulations!
+
+That's all, now let's deep dive into the [props](/docs/api).

@@ -1,11 +1,23 @@
 import type { MetaRecord } from 'nextra';
 
 const mate: MetaRecord = {
-  guide: {
-    title: 'Guide',
+  started: {
+    title: 'Getting Started',
   },
-  advanced: {
-    title: 'Advanced',
+  api: {
+    title: 'API Reference',
+  },
+  validation: {
+    title: 'Phone validation',
+  },
+  form: {
+    title: 'React Hook Form',
+  },
+  continent: {
+    title: 'Continent codes',
+  },
+  country: {
+    title: 'Country codes',
   },
 };
 

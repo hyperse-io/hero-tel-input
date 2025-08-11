@@ -1,0 +1,10 @@
+@import "tailwindcss";
+@import 'nextra-theme-docs/style.css';
+
+@plugin '../theme/hero.ts';
+
+/* Note: You may need to change the path to fit your project structure */
+@source '../../../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@source '../../../dist/**/*.{js,ts,jsx,tsx}';
+@source '../**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));

@@ -1,0 +1,27 @@
+---
+title: Phone validation
+description: Learn how to validate phone numbers with HeroTelInput.
+---
+
+# Phone validation
+
+Maybe you need to validate the phone number value and check that it's correct. To do that, just import matchIsValidTel from the package and use this function, it will return a `boolean`.
+
+```tsx
+import React from 'react';
+import { HeroTelInput, matchIsValidTel } from '@hyperse/hero-tel-input';
+
+const MyComponent = () => {
+  const [value, setValue] = React.useState('+33123456789');
+
+  const handleChange = (newValue) => {
+    matchIsValidTel(newValue, {
+      onlyCountries: [], // optional,
+      excludedCountries: [], // optional
+      continents: [], // optional
+    }); // true | false
+  };
+
+  return <HeroTelInput value={value} onChange={handleChange} />;
+};
+```
