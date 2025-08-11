@@ -1,5 +1,5 @@
 {
-  "name": "@example/example-nextjs",
+  "name": "@hyperse/hero-tel-input-example-nextjs",
   "version": "1.1.8",
   "private": true,
   "homepage": "https://github.com/hyperse-io/code-inspector/examples/example-nextjs",
@@ -22,7 +22,7 @@
   "dependencies": {
     "@heroui/react": "^2.8.2",
     "@hookform/resolvers": "^5.0.1",
-    "@hyperse/hero-tel-input": "file:../hero-tel-input/dist/index.js",
+    "@hyperse/hero-tel-input": "workspace:*",
     "framer-motion": "^12.23.12",
     "next": "^15.4.6",
     "react": "^19.1.1",

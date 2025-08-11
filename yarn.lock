@@ -2062,45 +2062,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@example/example-nextjs@workspace:examples/example-nextjs":
-  version: 0.0.0-use.local
-  resolution: "@example/example-nextjs@workspace:examples/example-nextjs"
-  dependencies:
-    "@babel/core": "npm:7.27.4"
-    "@babel/preset-env": "npm:7.27.2"
-    "@babel/preset-react": "npm:7.27.1"
-    "@babel/preset-typescript": "npm:7.27.1"
-    "@heroui/react": "npm:^2.8.2"
-    "@hookform/resolvers": "npm:^5.0.1"
-    "@hyperse/eslint-config-hyperse": "npm:^1.4.5"
-    "@hyperse/hero-tel-input": "workspace:*"
-    "@hyperse/next-config": "npm:^1.0.3"
-    "@rspack/cli": "npm:1.4.0"
-    "@rspack/core": "npm:1.4.0"
-    "@rspack/plugin-react-refresh": "npm:1.4.3"
-    "@swc/helpers": "npm:0.5.17"
-    "@tailwindcss/postcss": "npm:^4.1.8"
-    "@types/node": "npm:22.15.29"
-    "@types/react": "npm:^19.1.9"
-    "@types/react-dom": "npm:^19.1.7"
-    "@zthxxx/tsconfig": "npm:1.0.5"
-    autoprefixer: "npm:^10.4.21"
-    framer-motion: "npm:^12.23.12"
-    next: "npm:^15.4.6"
-    postcss: "npm:^8.5.4"
-    postcss-loader: "npm:8.1.1"
-    react: "npm:^19.1.1"
-    react-dom: "npm:^19.1.1"
-    react-hook-form: "npm:^7.62.0"
-    react-refresh: "npm:^0.17.0"
-    rimraf: "npm:6.0.1"
-    tailwindcss: "npm:^4.1.11"
-    ts-node: "npm:10.9.2"
-    typescript: "npm:5.8.3"
-    zod: "npm:^4.0.17"
-  languageName: unknown
-  linkType: soft
-
 "@floating-ui/core@npm:^1.7.3":
   version: 1.7.3
   resolution: "@floating-ui/core@npm:1.7.3"
@@ -3753,6 +3714,45 @@ __metadata:
   checksum: 10/19b0bed801b1438e2abc6c14ab376d04ced784082387d4cb4e7e5a52b613ab000b8f47fd0dedfc4906c8e9e08b7fc5e696c0d2252523e03d383bd4a79a7ed0f1
   languageName: node
   linkType: hard
+
+"@hyperse/hero-tel-input-example-nextjs@workspace:examples/example-nextjs":
+  version: 0.0.0-use.local
+  resolution: "@hyperse/hero-tel-input-example-nextjs@workspace:examples/example-nextjs"
+  dependencies:
+    "@babel/core": "npm:7.27.4"
+    "@babel/preset-env": "npm:7.27.2"
+    "@babel/preset-react": "npm:7.27.1"
+    "@babel/preset-typescript": "npm:7.27.1"
+    "@heroui/react": "npm:^2.8.2"
+    "@hookform/resolvers": "npm:^5.0.1"
+    "@hyperse/eslint-config-hyperse": "npm:^1.4.5"
+    "@hyperse/hero-tel-input": "workspace:*"
+    "@hyperse/next-config": "npm:^1.0.3"
+    "@rspack/cli": "npm:1.4.0"
+    "@rspack/core": "npm:1.4.0"
+    "@rspack/plugin-react-refresh": "npm:1.4.3"
+    "@swc/helpers": "npm:0.5.17"
+    "@tailwindcss/postcss": "npm:^4.1.8"
+    "@types/node": "npm:22.15.29"
+    "@types/react": "npm:^19.1.9"
+    "@types/react-dom": "npm:^19.1.7"
+    "@zthxxx/tsconfig": "npm:1.0.5"
+    autoprefixer: "npm:^10.4.21"
+    framer-motion: "npm:^12.23.12"
+    next: "npm:^15.4.6"
+    postcss: "npm:^8.5.4"
+    postcss-loader: "npm:8.1.1"
+    react: "npm:^19.1.1"
+    react-dom: "npm:^19.1.1"
+    react-hook-form: "npm:^7.62.0"
+    react-refresh: "npm:^0.17.0"
+    rimraf: "npm:6.0.1"
+    tailwindcss: "npm:^4.1.11"
+    ts-node: "npm:10.9.2"
+    typescript: "npm:5.8.3"
+    zod: "npm:^4.0.17"
+  languageName: unknown
+  linkType: soft
 
 "@hyperse/hero-tel-input-website@workspace:website":
   version: 0.0.0-use.local

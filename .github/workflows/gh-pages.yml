@@ -39,7 +39,7 @@ jobs:
 
       - name: Build website
         run: |
-          yarn g:build-website  
+          yarn build-website  
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
