@@ -83,13 +83,16 @@ export const FlagDropdown = (props: FlagDropdownProps) => {
           base: cn('max-h-[50dvh] overflow-y-auto', dropdownMenu?.base),
         }}
         selectedKeys={isoCode ? [isoCode] : []}
+        autoFocus
+        shouldFocusWrap
       >
         {countriesFiltered.map((isoCodeItem) => {
           return (
             <DropdownItem
+              autoFocus
               key={isoCodeItem}
               value={isoCodeItem}
-              textValue={isoCodeItem}
+              textValue={displayNames.of(isoCodeItem)}
               startContent={getFlagElement(isoCodeItem, {
                 countryName: displayNames.of(isoCodeItem) || '',
                 isSelected: isoCodeItem === isoCode,
