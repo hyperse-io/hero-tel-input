@@ -1,5 +1,5 @@
 ---
-"@hyperse/hero-tel-input": patch
+"@hyperse/hero-tel-input": major
 ---
 
 1、publish hero-tel-input
