@@ -36,6 +36,7 @@
     "@babel/preset-env": "7.27.2",
     "@babel/preset-react": "7.27.1",
     "@babel/preset-typescript": "7.27.1",
+    "@hyperse/eslint-config-hyperse": "^1.4.5",
     "@hyperse/next-config": "^1.0.3",
     "@rspack/cli": "1.4.0",
     "@rspack/core": "1.4.0",

@@ -7,6 +7,12 @@ import {
   matchContinentsIncludeCountry,
 } from './helper-country.js';
 
+/***
+ * Match if the phone number is valid.
+ * @param text - phone number string
+ * @param options - options
+ * @returns true if the phone number is valid
+ */
 export function matchIsValidTel(
   text: string,
   options?: {

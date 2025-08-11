@@ -37,6 +37,11 @@ type GetInitialStateParams = {
   disableFormatting: boolean;
 };
 
+/***
+ * Get the initial state for the phone input.
+ * @param params - GetInitialStateParams
+ * @returns State
+ */
 export function getInitialState(params: GetInitialStateParams): State {
   const { defaultCountry, initialValue, disableFormatting, forceCallingCode } =
     params;
@@ -191,20 +196,13 @@ export default function usePhoneDigits({
     const phoneInfo = buildInputInfo('input');
     // Check if the country is excluded, or not part on onlyCountries, etc..
     if (numberValue && (!country || !matchIsIsoCodeValid(country))) {
-      onChange?.(
-        {
-          target: {
-            value: numberValue,
-          },
-        },
-        {
-          ...phoneInfo,
-          // we show the input value but without any formatting, or country..
-          countryCode: null,
-          countryCallingCode: null,
-          nationalNumber: null,
-        }
-      );
+      onChange?.(numberValue, {
+        ...phoneInfo,
+        // we show the input value but without any formatting, or country..
+        countryCode: null,
+        countryCallingCode: null,
+        nationalNumber: null,
+      });
       setPreviousValue(numberValue);
       setState({
         isoCode: null,
@@ -212,14 +210,7 @@ export default function usePhoneDigits({
       });
     } else {
       const valueToSet = disableFormatting ? numberValue : formattedValue;
-      onChange?.(
-        {
-          target: {
-            value: valueToSet,
-          },
-        },
-        phoneInfo
-      );
+      onChange?.(numberValue, phoneInfo);
       setPreviousValue(valueToSet);
       setState({
         isoCode: country,
@@ -261,14 +252,7 @@ export default function usePhoneDigits({
       setPreviousValue(inputValue);
       asYouTypeRef.current.input(inputValue);
       previousCountryRef.current = asYouTypeRef.current.getCountry() || null;
-      onChange?.(
-        {
-          target: {
-            value: inputValue,
-          },
-        },
-        buildInputInfo('country')
-      );
+      onChange?.(inputValue, buildInputInfo('country'));
       setState({
         inputValue,
         isoCode,
@@ -307,18 +291,11 @@ export default function usePhoneDigits({
       newValue = typeNewValue(newValue);
     }
 
-    onChange?.(
-      {
-        target: {
-          value: newValue,
-        },
-      },
-      {
-        ...buildInputInfo('country'),
-        // Some country have the same calling code, so we choose what the user has selected
-        countryCode: newCountry,
-      }
-    );
+    onChange?.(newValue, {
+      ...buildInputInfo('country'),
+      // Some country have the same calling code, so we choose what the user has selected
+      countryCode: newCountry,
+    });
     previousCountryRef.current = newCountry;
     setPreviousValue(newValue);
     setState({

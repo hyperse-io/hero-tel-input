@@ -17,5 +17,5 @@ export default defineConfig(
       },
     },
   ],
-  ['**/out', '**/website', '**/example-nextjs']
+  ['**/out', '**/website', '**/examples/example-nextjs']
 );

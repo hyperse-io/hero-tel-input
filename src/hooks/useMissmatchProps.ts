@@ -3,6 +3,10 @@ import { CONTINENTS } from '../constants/continents.js';
 import { getFirstIntersection } from '../helpers/helper-array.js';
 import type { HeroTelInputProps } from '../types/type-input.js';
 
+/***
+ * Hook for checking if the props are mismatched.
+ * @param props - HeroTelInputProps
+ */
 export function useMismatchProps(props: HeroTelInputProps) {
   const {
     defaultCountry,

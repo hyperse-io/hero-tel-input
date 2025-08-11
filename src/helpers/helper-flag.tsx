@@ -9,8 +9,8 @@ const getDefaultImageSrc = (isoCode: HeroTelInputCountry) => {
   // these 2 flags do not exist on flagpedia CDN
   if (isoCode === 'TA' || isoCode === 'AC') {
     return {
-      TA: decodeURIComponent(FLAGS_SVG.TA),
-      AC: decodeURIComponent(FLAGS_SVG.AC),
+      TA: FLAGS_SVG.TA,
+      AC: FLAGS_SVG.AC,
     }[isoCode];
   }
 
@@ -20,7 +20,6 @@ const getDefaultImageSrc = (isoCode: HeroTelInputCountry) => {
 
 export const getDefaultImgProps = ({
   isoCode,
-  countryName,
 }: {
   isoCode: HeroTelInputCountry;
   countryName: string;
@@ -29,7 +28,7 @@ export const getDefaultImgProps = ({
     src: getDefaultImageSrc(isoCode),
     loading: 'lazy',
     width: 26,
-    alt: countryName,
+    alt: isoCode,
   } satisfies React.ComponentPropsWithoutRef<'img'>;
 };
 

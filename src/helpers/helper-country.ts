@@ -16,16 +16,32 @@ type FilterCountriesOptions = {
   continents?: readonly HeroTelInputContinent[];
 };
 
+/***
+ * Get the calling code of a country.
+ * @param isoCode - country ISO code
+ * @returns calling code
+ */
 export function getCallingCodeOfCountry(isoCode: HeroTelInputCountry): string {
   return COUNTRIES[isoCode]?.[0] as string;
 }
 
+/***
+ * Get the valid country.
+ * @param country - country ISO code
+ * @returns valid country
+ */
 export function getValidCountry(
   country?: HeroTelInputCountry
 ): HeroTelInputCountry {
   return country || DEFAULT_ISO_CODE;
 }
 
+/***
+ * Sort preferred countries.
+ * @param countries - countries
+ * @param preferredCountries - preferred countries
+ * @returns sorted countries
+ */
 export function sortPreferredCountries(
   countries: readonly HeroTelInputCountry[],
   preferredCountries: readonly HeroTelInputCountry[]
@@ -33,6 +49,11 @@ export function sortPreferredCountries(
   return [...new Set(preferredCountries.concat(countries))];
 }
 
+/***
+ * Get the countries of continents.
+ * @param continents - continents
+ * @returns countries
+ */
 export function getCountriesOfContinents(
   continents: readonly HeroTelInputContinent[]
 ): readonly HeroTelInputCountry[] {
@@ -41,6 +62,12 @@ export function getCountriesOfContinents(
   });
 }
 
+/***
+ * Get the only countries.
+ * @param countries - countries
+ * @param onlyCountries - only countries
+ * @returns only countries
+ */
 export function getOnlyCountries(
   countries: readonly HeroTelInputCountry[],
   onlyCountries: readonly HeroTelInputCountry[]
@@ -50,6 +77,12 @@ export function getOnlyCountries(
   });
 }
 
+/***
+ * Exclude countries.
+ * @param countries - countries
+ * @param excludedCountries - excluded countries
+ * @returns excluded countries
+ */
 export function excludeCountries(
   countries: readonly HeroTelInputCountry[],
   excludedCountries?: readonly HeroTelInputCountry[]
@@ -63,6 +96,12 @@ export function excludeCountries(
   return countries;
 }
 
+/***
+ * Sort alphabetically country codes.
+ * @param countryCodes - country codes
+ * @param displayNames - display names
+ * @returns sorted country codes
+ */
 export function sortAlphabeticallyCountryCodes(
   countryCodes: readonly HeroTelInputCountry[],
   displayNames: Intl.DisplayNames
@@ -75,6 +114,13 @@ export function sortAlphabeticallyCountryCodes(
   });
 }
 
+/***
+ * Filter countries.
+ * @param countries - countries
+ * @param displayNames - display names
+ * @param options - options
+ * @returns filtered countries
+ */
 export function filterCountries(
   countries: readonly HeroTelInputCountry[],
   displayNames: Intl.DisplayNames,
@@ -112,6 +158,12 @@ export function filterCountries(
     : sortedPreferredCountries;
 }
 
+/***
+ * Match continents include country.
+ * @param continents - continents
+ * @param isoCode - country ISO code
+ * @returns true if the country is in the continents
+ */
 export function matchContinentsIncludeCountry(
   continents: HeroTelInputContinent[],
   isoCode: HeroTelInputCountry

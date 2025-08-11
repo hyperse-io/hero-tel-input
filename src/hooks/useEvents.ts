@@ -6,6 +6,11 @@ type Options = Pick<InputProps, 'onDoubleClick' | 'onCopy' | 'onFocus'> & {
   inputRef: React.RefObject<HTMLInputElement | null>;
 };
 
+/***
+ * Hook for handling events on HeroTelInput component.
+ * @param options - event handlers and input reference
+ * @returns event handlers
+ */
 export function useEvents({
   onDoubleClick,
   onCopy,
