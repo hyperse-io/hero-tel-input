@@ -140,7 +140,6 @@ function PhoneForm() {
 | `focusOnSelectCountry` | `boolean`                                         | -       | Focus input after country selection      |
 | `onChange`             | `(value: string, info: HeroTelInputInfo) => void` | -       | Callback when value changes              |
 | `onBlur`               | `(event, info: HeroTelInputInfo) => void`         | -       | Callback when input loses focus          |
-| `getFlagElement`       | `GetFlagElement`                                  | -       | Custom flag element renderer             |
 | `unknownFlagElement`   | `React.ReactNode`                                 | -       | Element for unknown flags                |
 
 ### HeroTelInputInfo

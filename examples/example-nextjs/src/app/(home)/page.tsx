@@ -14,6 +14,7 @@ import {
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HeroTelInput, matchIsValidTel } from '@hyperse/hero-tel-input';
 import { HeroTelInputComponent } from './HeroTelInput.js';
+import SwitchTheme from './SwitchTheme.js';
 
 const ResetPwdSchema = z.object({
   phoneNumber: z
@@ -46,9 +47,12 @@ export default function Pages() {
   return (
     <>
       <div className="flex h-full w-full flex-col items-center justify-center gap-8 overflow-auto p-12">
-        <Chip color="primary" variant="flat">
-          Hyperse Tel Input with HeroUI
-        </Chip>
+        <div className="flex w-full flex-row items-center justify-center gap-4">
+          <Chip color="primary" variant="flat">
+            Hyperse Tel Input with HeroUI
+          </Chip>
+          <SwitchTheme />
+        </div>
         <Card className="w-full" shadow="sm">
           <CardHeader>
             <p className="text-sm font-medium">With Form</p>

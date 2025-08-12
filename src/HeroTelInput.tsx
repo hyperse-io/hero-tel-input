@@ -1,24 +1,30 @@
 'use client';
 
-import { useMemo } from 'react';
 import ReactDOM from 'react-dom';
-import { Input } from '@heroui/react';
-import { FlagButton } from './components/FlagButton/FlagButton.js';
-import { FlagDropdown } from './components/FlagDropdown/index.js';
-import type { HeroTelInputCountry } from './constants/countries.js';
+import { Input, type InputProps } from '@heroui/react';
+import {
+  FlagAutocomplete,
+  type FlagAutocompleteClassNames,
+} from './components/FlagAutocomplete/index.js';
+import { type HeroTelInputCountry } from './constants/countries.js';
 import {
   getCallingCodeOfCountry,
   getValidCountry,
 } from './helpers/helper-country.js';
-import {
-  defaultUnknownFlagElement,
-  getDefaultFlagElement,
-} from './helpers/helper-flag.js';
+import { defaultUnknownFlagElement } from './helpers/helper-flag.js';
 import { refToRefs } from './helpers/helper-ref.js';
 import { removeOccurrence } from './helpers/helper-string.js';
 import { useEvents } from './hooks/useEvents.js';
 import usePhoneDigits from './hooks/usePhoneDigits.js';
-import type { HeroTelInputProps } from './types/type-input.js';
+import type { HeroTelInputProps as BaseHeroTelInputProps } from './types/type-input.js';
+
+export type HeroTelInputClassNames = {
+  input?: InputProps['classNames'];
+};
+
+export type HeroTelInputProps = BaseHeroTelInputProps & {
+  classNames?: HeroTelInputClassNames & FlagAutocompleteClassNames;
+};
 
 export const HeroTelInput = (props: HeroTelInputProps) => {
   const {
@@ -30,7 +36,7 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     langOfCountryName,
     continents,
     preferredCountries,
-    focusOnSelectCountry,
+    focusOnSelectCountry = true,
     disableFormatting = false,
     unknownFlagElement = defaultUnknownFlagElement,
     disableDropdown,
@@ -39,11 +45,12 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     onCopy,
     onBlur,
     onChange,
-    getFlagElement = getDefaultFlagElement,
-    classNames,
+    classNames = {},
     ref: propRef,
     ...rest
   } = props;
+
+  const { input, ...restClassNames } = classNames;
 
   const validDefaultCountry = forceCallingCode
     ? getValidCountry(defaultCountry)
@@ -79,9 +86,11 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
       onCountryChange(newCountry);
     });
 
-    setTimeout(() => {
-      inputRef.current?.focus();
-    }, 500);
+    if (focusOnSelectCountry) {
+      setTimeout(() => {
+        inputRef.current?.focus();
+      }, 500);
+    }
   };
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -92,26 +101,6 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
   const validInputValue = forceCallingCode
     ? removeOccurrence(inputValue, isoCodeWithPlus).trimStart()
     : inputValue;
-
-  const triggerButton = useMemo(() => {
-    return (
-      <FlagButton
-        isoCode={isoCode}
-        forceCallingCode={forceCallingCode}
-        langOfCountryName={langOfCountryName}
-        disableDropdown={disableDropdown}
-        getFlagElement={getFlagElement}
-        unknownFlagElement={unknownFlagElement}
-      />
-    );
-  }, [
-    isoCode,
-    getFlagElement,
-    forceCallingCode,
-    disableDropdown,
-    langOfCountryName,
-    unknownFlagElement,
-  ]);
 
   return (
     <>
@@ -125,18 +114,20 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
         onDoubleClick={handleDoubleClick}
         onFocus={handleFocus}
         onCopy={handleCopy}
+        classNames={input}
         startContent={
-          <FlagDropdown
+          <FlagAutocomplete
             isoCode={isoCode}
+            forceCallingCode={forceCallingCode}
+            disableDropdown={disableDropdown}
+            unknownFlagElement={unknownFlagElement}
             onSelectCountry={handleChangeCountry}
             excludedCountries={excludedCountries}
             onlyCountries={onlyCountries}
             langOfCountryName={langOfCountryName}
             continents={continents}
             preferredCountries={preferredCountries}
-            getFlagElement={getFlagElement}
-            classNames={classNames}
-            triggerButton={triggerButton}
+            classNames={restClassNames}
           />
         }
         {...rest}
