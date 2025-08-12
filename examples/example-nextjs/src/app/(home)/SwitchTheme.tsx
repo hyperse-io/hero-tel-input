@@ -57,13 +57,23 @@ export default function SwitchTheme() {
       isIconOnly
       radius="full"
       variant="bordered"
+      aria-label={
+        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+      }
+      title={
+        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
+      }
       className="p-0"
       onPress={() => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       }}
     >
       <div className="flex size-5 items-center justify-center">
-        {theme !== 'dark' ? <MoonIcon /> : <SunIcon />}
+        {theme !== 'dark' ? (
+          <MoonIcon aria-hidden="true" focusable="false" />
+        ) : (
+          <SunIcon aria-hidden="true" focusable="false" />
+        )}
       </div>
     </Button>
   );

@@ -24,7 +24,7 @@ export const FlagMenuItem = (props: FlagMenuItemProps) => {
     <MenuItem
       {...props}
       textValue={name}
-      aria-label={`${name} - ${isoCode}`}
+      aria-label={isoCode ? `${name} - ${isoCode}` : name}
       className={cn(
         'group box-border flex w-full cursor-default items-center rounded-md px-3 py-2 outline-none',
         'pressed:bg-primary/80 focus:text-foreground text-foreground-900 hover:bg-primary/80 focus:bg-primary',

@@ -29,15 +29,15 @@ import {
   type FlagModalOverlayClassNames,
 } from './FlagModalOverlay.js';
 import {
-  FlagSearchFiled,
-  type FlagSearchFiledClassNames,
-  type FlagSearchFiledProps,
-} from './FlagSearchFiled.js';
+  FlagSearchField,
+  type FlagSearchFieldClassNames,
+  type FlagSearchFieldProps,
+} from './FlagSearchField.js';
 
 export type FlagAutocompleteClassNames = FlagDialogClassNames &
   FlagDialogContentClassNames &
   FlagMenuItemClassNames &
-  FlagSearchFiledClassNames &
+  FlagSearchFieldClassNames &
   FlagModalClassNames &
   FlagModalOverlayClassNames;
 
@@ -53,7 +53,7 @@ export type FlagAutocompleteProps = {
   continents?: HeroTelInputContinent[];
   onSelectCountry: (isoCode: HeroTelInputCountry) => void;
   classNames?: FlagAutocompleteClassNames;
-} & Pick<FlagSearchFiledProps, 'searchAriaLabel' | 'searchPlaceholder'>;
+} & Pick<FlagSearchFieldProps, 'searchAriaLabel' | 'searchPlaceholder'>;
 
 export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
   const {
@@ -121,7 +121,7 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
             <FlagDialog classNames={{ dialog }}>
               <FlagDialogContent classNames={{ dialogContent }}>
                 <Autocomplete filter={contains}>
-                  <FlagSearchFiled
+                  <FlagSearchField
                     classNames={{ textField, searchInput }}
                     searchAriaLabel={searchAriaLabel}
                     searchPlaceholder={searchPlaceholder}

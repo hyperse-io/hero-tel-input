@@ -2,18 +2,18 @@ import { Input, TextField } from 'react-aria-components';
 import { useMediaQuery } from 'usehooks-ts';
 import { cn } from '@heroui/react';
 
-export type FlagSearchFiledProps = {
+export type FlagSearchFieldProps = {
   searchAriaLabel?: string;
   searchPlaceholder?: string;
-  classNames?: FlagSearchFiledClassNames;
+  classNames?: FlagSearchFieldClassNames;
 };
 
-export type FlagSearchFiledClassNames = {
+export type FlagSearchFieldClassNames = {
   textField?: string;
   searchInput?: string;
 };
 
-export const FlagSearchFiled = (props: FlagSearchFiledProps) => {
+export const FlagSearchField = (props: FlagSearchFieldProps) => {
   const {
     searchAriaLabel = 'Search countries',
     searchPlaceholder = 'Search countries…',

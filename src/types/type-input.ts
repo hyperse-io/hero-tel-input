@@ -146,10 +146,14 @@ export type HeroTelInputProps = BaseInputProps &
     unknownFlagElement?: React.ReactNode;
     /**
      * The aria-label of the search input.
+     *
+     * @default "Search countries"
      */
     searchAriaLabel?: string;
     /**
      * The placeholder of the search input.
+     *
+     * @default "Search countries..."
      */
     searchPlaceholder?: string;
   };
