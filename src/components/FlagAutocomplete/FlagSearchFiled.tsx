@@ -34,7 +34,7 @@ export const FlagSearchFiled = (props: FlagSearchFiledProps) => {
         autoFocus
         placeholder={searchPlaceholder}
         className={cn(
-          'text-foreground-900 bg-content3 focus-visible:ring-primary-500 outline-hidden rounded-lg border-solid px-3 py-2 text-base leading-5 focus-visible:ring-2',
+          'text-foreground-900 bg-content3 focus-visible:ring-primary-500 rounded-lg border-solid px-3 py-2 text-base leading-5 outline-hidden focus-visible:ring-2',
           searchInput
         )}
       />
