@@ -49,6 +49,7 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     ref: propRef,
     searchAriaLabel,
     searchPlaceholder,
+    activedCountryInTop,
     ...rest
   } = props;
 
@@ -120,6 +121,7 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
         startContent={
           <FlagAutocomplete
             isoCode={isoCode}
+            activedCountryInTop={activedCountryInTop}
             searchAriaLabel={searchAriaLabel}
             searchPlaceholder={searchPlaceholder}
             forceCallingCode={forceCallingCode}

@@ -43,6 +43,7 @@ export type FlagAutocompleteClassNames = FlagDialogClassNames &
 
 export type FlagAutocompleteProps = {
   isoCode: HeroTelInputCountry | null;
+  activedCountryInTop?: boolean;
   forceCallingCode?: boolean;
   unknownFlagElement?: ReactNode;
   onlyCountries?: HeroTelInputCountry[];
@@ -70,6 +71,7 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
     classNames = {},
     searchAriaLabel,
     searchPlaceholder,
+    activedCountryInTop = true,
   } = props;
 
   const {
@@ -86,11 +88,22 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
     return getDisplayNames(langOfCountryName);
   }, [langOfCountryName]);
 
+  let mergePreferredCountries = preferredCountries;
+
+  if (activedCountryInTop) {
+    mergePreferredCountries = Array.from(
+      new Set([
+        ...(initialIsoCode ? [initialIsoCode] : []),
+        ...preferredCountries,
+      ])
+    );
+  }
+
   const countriesFiltered = filterCountries(ISO_CODES, displayNames, {
     onlyCountries,
     excludedCountries,
     continents,
-    preferredCountries,
+    preferredCountries: mergePreferredCountries,
   });
 
   const countriesFilteredList = countriesFiltered.map((isoCode) => {
@@ -135,6 +148,7 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
                         {...itemProps}
                         classNames={{ menuItem }}
                         unknownFlagElement={unknownFlagElement}
+                        active={itemProps.isoCode === initialIsoCode}
                         onAction={() => {
                           onSelectCountry(itemProps.isoCode);
                         }}

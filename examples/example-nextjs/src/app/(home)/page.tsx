@@ -151,6 +151,12 @@ export default function Pages() {
           disableFormatting
           defaultCountry="CN"
         />
+
+        <HeroTelInputComponent
+          label="activedCountryInFirst:false"
+          activedCountryInTop={false}
+          defaultCountry="CN"
+        />
       </div>
     </>
   );

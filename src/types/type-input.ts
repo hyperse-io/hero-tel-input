@@ -156,4 +156,10 @@ export type HeroTelInputProps = BaseInputProps &
      * @default "Search countries..."
      */
     searchPlaceholder?: string;
+    /**
+     * The actived country code to be highlighted to the top of the list of countries.
+     *
+     * @default true
+     */
+    activedCountryInTop?: boolean;
   };

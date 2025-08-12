@@ -11,6 +11,7 @@ export type FlagMenuItemProps = MenuItemProps & {
   name: string;
   unknownFlagElement: React.ReactNode;
   classNames?: FlagMenuItemClassNames;
+  active?: boolean;
 };
 
 export type FlagMenuItemClassNames = {
@@ -18,7 +19,7 @@ export type FlagMenuItemClassNames = {
 };
 
 export const FlagMenuItem = (props: FlagMenuItemProps) => {
-  const { isoCode, name, unknownFlagElement, classNames } = props;
+  const { isoCode, name, unknownFlagElement, classNames, active } = props;
   const { menuItem } = classNames || {};
   return (
     <MenuItem
@@ -28,7 +29,10 @@ export const FlagMenuItem = (props: FlagMenuItemProps) => {
       className={cn(
         'group box-border flex w-full cursor-default items-center rounded-md px-3 py-2 outline-none',
         'pressed:bg-primary/80 focus:text-foreground text-foreground-900 hover:bg-primary/80 focus:bg-primary',
-        menuItem
+        menuItem,
+        {
+          'bg-primary': active,
+        }
       )}
     >
       <div className="flex w-full flex-row items-center gap-2 p-1">
