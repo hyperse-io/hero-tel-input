@@ -23,7 +23,7 @@ export const FlagDialog = (props: FlagDialogProps) => {
   const { classNames, children } = props;
   const { dialog } = classNames || {};
   return (
-    <Dialog className={cn('relative outline-hidden', dialog)}>
+    <Dialog className={cn('outline-hidden relative', dialog)}>
       {children}
     </Dialog>
   );
