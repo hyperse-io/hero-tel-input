@@ -31,6 +31,7 @@ import {
 import {
   FlagSearchFiled,
   type FlagSearchFiledClassNames,
+  type FlagSearchFiledProps,
 } from './FlagSearchFiled.js';
 
 export type FlagAutocompleteClassNames = FlagDialogClassNames &
@@ -52,7 +53,7 @@ export type FlagAutocompleteProps = {
   continents?: HeroTelInputContinent[];
   onSelectCountry: (isoCode: HeroTelInputCountry) => void;
   classNames?: FlagAutocompleteClassNames;
-};
+} & Pick<FlagSearchFiledProps, 'searchAriaLabel' | 'searchPlaceholder'>;
 
 export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
   const {
@@ -67,6 +68,8 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
     forceCallingCode,
     unknownFlagElement,
     classNames = {},
+    searchAriaLabel,
+    searchPlaceholder,
   } = props;
 
   const {
@@ -118,10 +121,14 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
             <FlagDialog classNames={{ dialog }}>
               <FlagDialogContent classNames={{ dialogContent }}>
                 <Autocomplete filter={contains}>
-                  <FlagSearchFiled classNames={{ textField, searchInput }} />
+                  <FlagSearchFiled
+                    classNames={{ textField, searchInput }}
+                    searchAriaLabel={searchAriaLabel}
+                    searchPlaceholder={searchPlaceholder}
+                  />
                   <Menu
                     items={countriesFilteredList}
-                    className="mt-2 max-h-[300px] overflow-y-auto md:max-h-[50dvh]"
+                    className="mt-2 max-h-[50dvh] overflow-y-auto"
                   >
                     {(itemProps) => (
                       <FlagMenuItem

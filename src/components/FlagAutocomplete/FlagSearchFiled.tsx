@@ -1,9 +1,10 @@
 import { Input, TextField } from 'react-aria-components';
+import { useMediaQuery } from 'usehooks-ts';
 import { cn } from '@heroui/react';
 
 export type FlagSearchFiledProps = {
-  ariaLabel?: string;
-  placeholder?: string;
+  searchAriaLabel?: string;
+  searchPlaceholder?: string;
   classNames?: FlagSearchFiledClassNames;
 };
 
@@ -14,22 +15,24 @@ export type FlagSearchFiledClassNames = {
 
 export const FlagSearchFiled = (props: FlagSearchFiledProps) => {
   const {
-    ariaLabel = 'Search countries',
-    placeholder = 'Search countries…',
+    searchAriaLabel = 'Search countries',
+    searchPlaceholder = 'Search countries…',
     classNames,
   } = props;
   const { textField, searchInput } = classNames || {};
+  const isMobile = useMediaQuery('(max-width: 768px)');
   return (
     <TextField
-      aria-label={ariaLabel}
+      aria-label={searchAriaLabel}
       className={cn(
         'placeholder-foreground/70 flex flex-col rounded-md px-3 py-2 outline-none',
+        isMobile ? 'hidden' : 'flex',
         textField
       )}
     >
       <Input
         autoFocus
-        placeholder={placeholder}
+        placeholder={searchPlaceholder}
         className={cn(
           'text-foreground-900 bg-content3 focus-visible:ring-primary-500 rounded-lg border-solid px-3 py-2 text-base leading-5 outline-hidden focus-visible:ring-2',
           searchInput

@@ -102,6 +102,8 @@ export default function Pages() {
           label="langOfCountryName:CN"
           langOfCountryName="CN"
           defaultCountry="CN"
+          searchAriaLabel="搜索国家"
+          searchPlaceholder="搜索国家…"
         />
         <HeroTelInputComponent label="defaultCountry:CN" defaultCountry="CN" />
         <HeroTelInputComponent

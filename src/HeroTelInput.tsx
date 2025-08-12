@@ -47,6 +47,8 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     onChange,
     classNames = {},
     ref: propRef,
+    searchAriaLabel,
+    searchPlaceholder,
     ...rest
   } = props;
 
@@ -118,6 +120,8 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
         startContent={
           <FlagAutocomplete
             isoCode={isoCode}
+            searchAriaLabel={searchAriaLabel}
+            searchPlaceholder={searchPlaceholder}
             forceCallingCode={forceCallingCode}
             disableDropdown={disableDropdown}
             unknownFlagElement={unknownFlagElement}

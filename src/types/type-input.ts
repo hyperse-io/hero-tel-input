@@ -144,4 +144,12 @@ export type HeroTelInputProps = BaseInputProps &
      * This prop let you to customize the unknown flag, changed the width or height, use CDN or SVG component, etc..
      */
     unknownFlagElement?: React.ReactNode;
+    /**
+     * The aria-label of the search input.
+     */
+    searchAriaLabel?: string;
+    /**
+     * The placeholder of the search input.
+     */
+    searchPlaceholder?: string;
   };
