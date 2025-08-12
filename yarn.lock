@@ -3738,6 +3738,7 @@ __metadata:
     "@types/react-dom": "npm:^19.1.7"
     "@zthxxx/tsconfig": "npm:1.0.5"
     autoprefixer: "npm:^10.4.21"
+    eslint: "npm:^9.33.0"
     framer-motion: "npm:^12.23.12"
     next: "npm:^15.4.6"
     next-themes: "npm:^0.4.6"
@@ -3824,7 +3825,6 @@ __metadata:
     react: "npm:^19.1.1"
     react-aria-components: "npm:^1.11.0"
     react-dom: "npm:^19.1.1"
-    tailwind-variants: "npm:^2.1.0"
     tsup: "npm:^8.5.0"
     typescript: "npm:^5.9.2"
     usehooks-ts: "npm:^3.1.1"
@@ -11352,7 +11352,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.29.0, eslint@npm:^9.32.0":
+"eslint@npm:^9.29.0, eslint@npm:^9.32.0, eslint@npm:^9.33.0":
   version: 9.33.0
   resolution: "eslint@npm:9.33.0"
   dependencies:
@@ -19155,19 +19155,6 @@ __metadata:
     tailwind-merge:
       optional: true
   checksum: 10/842070656f11de265016301ef5b1bef9402740b63decbc0b2dd1ba934c5a0c6d490bb278a9e6a805d813a4254ae4b8e1a882b58e661dcb6f28bed759753cb46f
-  languageName: node
-  linkType: hard
-
-"tailwind-variants@npm:^2.1.0":
-  version: 2.1.0
-  resolution: "tailwind-variants@npm:2.1.0"
-  peerDependencies:
-    tailwind-merge: ">=3.0.0"
-    tailwindcss: "*"
-  peerDependenciesMeta:
-    tailwind-merge:
-      optional: true
-  checksum: 10/89ddab2554f657da232b0b8bb2fb04e855376868c8174d943eaf65aa0a6dfaf517b592b214d760aea3913a508dae2ce6361364e887034317069c083f942fc960
   languageName: node
   linkType: hard
 

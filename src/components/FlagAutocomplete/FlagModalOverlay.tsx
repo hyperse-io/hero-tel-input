@@ -19,7 +19,7 @@ export const FlagModalOverlay = (props: FlagModalOverlayProps) => {
       isDismissable={isDismissable}
       className={({ isEntering, isExiting }) =>
         cn(
-          'fixed inset-0 z-10 flex min-h-full items-center justify-center overflow-y-auto bg-black/25 p-4 text-center',
+          'fixed inset-0 z-10 flex min-h-full items-center justify-center overflow-y-auto bg-[rgba(0,0,0,0.25)] p-4 text-center backdrop-blur-sm',
           {
             'animate-in fade-in duration-300 ease-out': isEntering,
             'animate-out fade-out duration-200 ease-in': isExiting,
