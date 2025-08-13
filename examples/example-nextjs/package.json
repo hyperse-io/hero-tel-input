@@ -42,7 +42,6 @@
     "@zthxxx/tsconfig": "1.0.5",
     "eslint": "^9.33.0",
     "postcss": "^8.5.4",
-    "postcss-loader": "8.1.1",
     "tailwindcss": "^4.1.11",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-react-aria-components": "^2.0.0",
