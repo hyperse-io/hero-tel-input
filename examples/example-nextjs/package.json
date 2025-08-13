@@ -15,6 +15,7 @@
   "type": "module",
   "scripts": {
     "dev": "next dev --turbopack",
+    "serve": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
