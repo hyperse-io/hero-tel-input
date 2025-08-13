@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
+import { useMediaQuery } from 'usehooks-ts';
 import { Button } from '@heroui/react';
 
 export const MoonIcon = (props: React.SVGProps<SVGSVGElement>) => {
@@ -41,8 +41,8 @@ export const SunIcon = (props: React.SVGProps<SVGSVGElement>) => {
 };
 
 export default function SwitchTheme() {
-  const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const isDark = useMediaQuery('(prefers-color-scheme: dark)');
 
   useEffect(() => {
     setMounted(true);
@@ -57,19 +57,15 @@ export default function SwitchTheme() {
       isIconOnly
       radius="full"
       variant="bordered"
-      aria-label={
-        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-      }
-      title={
-        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-      }
+      aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+      title={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
       className="p-0"
       onPress={() => {
-        setTheme(theme === 'light' ? 'dark' : 'light');
+        document.documentElement.classList.toggle('dark');
       }}
     >
       <div className="flex size-5 items-center justify-center">
-        {theme !== 'dark' ? (
+        {isDark ? (
           <MoonIcon aria-hidden="true" focusable="false" />
         ) : (
           <SunIcon aria-hidden="true" focusable="false" />

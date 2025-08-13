@@ -15,6 +15,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { HeroTelInput, matchIsValidTel } from '@hyperse/hero-tel-input';
 import { HeroTelInputComponent } from './HeroTelInput';
 import SwitchTheme from './SwitchTheme';
+import '../styles/globals.css';
 
 const ResetPwdSchema = z.object({
   phoneNumber: z
@@ -33,7 +34,7 @@ const ResetPwdSchema = z.object({
 
 export type ResetPwdInput = z.infer<typeof ResetPwdSchema>;
 
-export default function Pages() {
+export default function Index() {
   const [result, setResult] = useState<ResetPwdInput>();
   const { handleSubmit, control } = useForm<ResetPwdInput>({
     resolver: zodResolver(ResetPwdSchema),
