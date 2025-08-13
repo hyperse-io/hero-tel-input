@@ -1,9 +1,7 @@
 import type { NumberType } from 'libphonenumber-js';
 import type { InputProps } from '@heroui/react';
-import type { FlagDropdownClassNames } from '../components/FlagDropdown/FlagDropdown.js';
 import type { HeroTelInputContinent } from '../constants/continents.js';
 import type { HeroTelInputCountry } from '../constants/countries.js';
-import type { GetFlagElement } from './type-flag.js';
 
 /***
  * The reason for input change.
@@ -53,6 +51,7 @@ export type BaseInputProps = Omit<
   | 'defaultValue'
   | 'inputProps'
   | 'InputProps'
+  | 'classNames'
 >;
 
 /***
@@ -111,10 +110,14 @@ export type HeroTelInputProps = BaseInputProps &
     value?: string | undefined;
     /**
      * Remove format (spaces..) from the input value.
+     *
+     * @default false
      */
     disableFormatting?: boolean;
     /**
      * Autofocus the input when the user selects a country in the list.
+     *
+     * @default true
      */
     focusOnSelectCountry?: boolean;
     /**
@@ -138,17 +141,25 @@ export type HeroTelInputProps = BaseInputProps &
      */
     onChange?: HeroTelInputOnChange;
     /**
-     * By default, the flag icons are loaded from https://flagcdn.com. But, with this prop, you can customize the img element, or use another CDN, or use SVG, etc..
-     *
-     * getFlagElement empower you to use your own flag library, CDN, SVGs, etc. For those who desire offline functionality, it's possible as you can pass your own SVG components (no internet connection required).
-     */
-    getFlagElement?: GetFlagElement;
-    /**
      * This prop let you to customize the unknown flag, changed the width or height, use CDN or SVG component, etc..
      */
     unknownFlagElement?: React.ReactNode;
     /**
-     * Custom class names for dropdown.
+     * The aria-label of the search input.
+     *
+     * @default "Search countries"
      */
-    classNames?: FlagDropdownClassNames;
+    searchAriaLabel?: string;
+    /**
+     * The placeholder of the search input.
+     *
+     * @default "Search countries..."
+     */
+    searchPlaceholder?: string;
+    /**
+     * The actived country code to be highlighted to the top of the list of countries.
+     *
+     * @default true
+     */
+    activedCountryInTop?: boolean;
   };

@@ -1,3 +1,4 @@
+export * from './components/index.js';
 export * from './constants/index.js';
 export * from './helpers/index.js';
 export { HeroTelInput } from './HeroTelInput.js';

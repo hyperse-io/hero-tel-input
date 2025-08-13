@@ -11,8 +11,8 @@ import './page.css';
 
 const features = [
   {
-    title: 'International Support',
-    icon: 'material-icon-theme:architecture',
+    title: 'i18n',
+    icon: 'material-icon-theme:folder-i18n',
     description: 'Supports all countries with their respective calling codes',
   },
   {
@@ -41,10 +41,9 @@ const features = [
     description: 'WCAG compliant with proper ARIA attributes',
   },
   {
-    title: 'Form Integration',
-    icon: 'twemoji:flexed-biceps',
-    description:
-      'Works seamlessly with React Hook Form and other form libraries',
+    title: 'Theme Switching',
+    icon: 'fluent:dark-theme-24-filled',
+    description: 'Supports light and dark mode to match user preferences',
   },
   {
     title: 'Customizable',

@@ -18,3 +18,18 @@ export default MyProps
 `,
   })}
 />
+
+## Custom classNames
+
+<TSDoc
+  definition={generateDefinition({
+    code: `
+import { Input, type InputProps } from '@heroui/react';
+import type { FlagAutocompleteClassNames } from '@hyperse/hero-tel-input/index.d.ts'
+type MyProps = FlagAutocompleteClassNames & {
+  input?: InputProps['classNames'];
+};
+export default MyProps;
+`,
+  })}
+/>

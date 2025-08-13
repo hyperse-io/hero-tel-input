@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import 'nextra-theme-docs/style.css';
 
+@plugin "tailwindcss-react-aria-components";
+@plugin "tailwindcss-animate";
+
 @plugin '../theme/hero.ts';
 
 /* Note: You may need to change the path to fit your project structure */
