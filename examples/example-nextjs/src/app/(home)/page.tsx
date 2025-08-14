@@ -13,8 +13,8 @@ import {
 } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HeroTelInput, matchIsValidTel } from '@hyperse/hero-tel-input';
-import { HeroTelInputComponent } from './HeroTelInput.js';
-import SwitchTheme from './SwitchTheme.js';
+import { HeroTelInputComponent } from './HeroTelInput';
+import SwitchTheme from './SwitchTheme';
 
 const ResetPwdSchema = z.object({
   phoneNumber: z
