@@ -59,9 +59,6 @@ export default function SwitchTheme() {
       aria-label={
         theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
       }
-      title={
-        theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
-      }
       className="rounded-full p-0"
       onPress={() => {
         setTheme(theme === 'light' ? 'dark' : 'light');
