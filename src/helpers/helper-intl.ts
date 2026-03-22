@@ -1,4 +1,4 @@
-import { DEFAULT_LANG } from '../constants/lang.js';
+import { DEFAULT_LANG } from '../constants/lang';
 
 /***
  * Get the display names.

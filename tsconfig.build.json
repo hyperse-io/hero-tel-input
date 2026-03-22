@@ -3,7 +3,8 @@
   "compilerOptions": {
     "rootDir": "./src",
     "incremental": false,
-    "moduleResolution": "nodenext",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
     "paths": {}
   },
   "exclude": ["**/*.stories.tsx", "**/*.stories.mdx", ".storybook/**", "dist"]

@@ -25,7 +25,7 @@ export const FlagModalOverlay = (props: FlagModalOverlayProps) => {
             'animate-out fade-out duration-200 ease-in': isExiting,
           },
           overlay
-        )
+        ) ?? ''
       }
     >
       {children}

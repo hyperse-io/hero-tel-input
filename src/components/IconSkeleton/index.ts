@@ -1,1 +1,1 @@
-export * from './IconSkeleton.js';
+export * from './IconSkeleton';

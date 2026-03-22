@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Card, CardBody, CardHeader } from '@heroui/react';
+import { Card } from '@heroui/react';
 import type {
   ForceCallingCodeWithDefaultCountry,
   HeroTelInputInfo,
@@ -21,9 +21,9 @@ export const HeroTelInputComponent = (props: HeroTelInputComponentProps) => {
     info: HeroTelInputInfo;
   }>();
   return (
-    <Card className="w-full" shadow="sm">
-      <CardHeader className="flex flex-col items-start gap-2">
-        <p className="text-sm font-medium">{label}</p>
+    <Card className="w-full shadow-sm">
+      <Card.Header className="flex flex-col items-start gap-2">
+        <p className="text-sm font-medium">{label as React.ReactNode}</p>
         <div className="w-full">
           <HeroTelInput
             {...rest}
@@ -35,11 +35,11 @@ export const HeroTelInputComponent = (props: HeroTelInputComponentProps) => {
             }}
           />
         </div>
-      </CardHeader>
-      <CardBody className="pt-0 text-sm">
+      </Card.Header>
+      <Card.Content className="pt-0 text-sm">
         <p>value: {result?.value} </p>
         <p>info: {JSON.stringify(result?.info)}</p>
-      </CardBody>
+      </Card.Content>
     </Card>
   );
 };

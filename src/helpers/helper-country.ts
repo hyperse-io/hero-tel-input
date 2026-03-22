@@ -1,13 +1,13 @@
 import {
   CONTINENTS,
   type HeroTelInputContinent,
-} from '../constants/continents.js';
+} from '../constants/continents';
 import {
   COUNTRIES,
   DEFAULT_ISO_CODE,
   type HeroTelInputCountry,
-} from '../constants/countries.js';
-import { matchIsArray } from './helper-array.js';
+} from '../constants/countries';
+import { matchIsArray } from './helper-array';
 
 type FilterCountriesOptions = {
   onlyCountries?: readonly HeroTelInputCountry[];

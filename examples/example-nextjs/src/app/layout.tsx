@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { HeroProvider } from './HeroProvider.js';
+import { HeroProvider } from './HeroProvider';
 import '../styles/globals.css';
 
 export const metadata: Metadata = {

@@ -1,7 +1,7 @@
 import type { NumberType } from 'libphonenumber-js';
-import type { InputProps } from '@heroui/react';
-import type { HeroTelInputContinent } from '../constants/continents.js';
-import type { HeroTelInputCountry } from '../constants/countries.js';
+import type { TextFieldProps } from '@heroui/react';
+import type { HeroTelInputContinent } from '../constants/continents';
+import type { HeroTelInputCountry } from '../constants/countries';
 
 /***
  * The reason for input change.
@@ -41,17 +41,11 @@ export interface HeroTelInputInfo {
 
 /***
  * Base input props, omitting internal fields.
+ * Based on v3 TextFieldProps (compound component pattern).
  */
 export type BaseInputProps = Omit<
-  InputProps,
-  | 'onChange'
-  | 'select'
-  | 'type'
-  | 'multiline'
-  | 'defaultValue'
-  | 'inputProps'
-  | 'InputProps'
-  | 'classNames'
+  TextFieldProps,
+  'onChange' | 'children' | 'type' | 'defaultValue'
 >;
 
 /***
@@ -162,4 +156,20 @@ export type HeroTelInputProps = BaseInputProps &
      * @default true
      */
     activedCountryInTop?: boolean;
+    /**
+     * Label for the input field. Rendered as a Label component inside the TextField.
+     */
+    label?: React.ReactNode;
+    /**
+     * Error message to display below the input. Rendered as a FieldError component.
+     */
+    errorMessage?: React.ReactNode;
+    /**
+     * Description text to display below the input.
+     */
+    description?: React.ReactNode;
+    /**
+     * Placeholder text for the input.
+     */
+    placeholder?: string;
   };

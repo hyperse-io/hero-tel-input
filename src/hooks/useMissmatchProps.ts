@@ -1,7 +1,7 @@
 import React from 'react';
-import { CONTINENTS } from '../constants/continents.js';
-import { getFirstIntersection } from '../helpers/helper-array.js';
-import type { HeroTelInputProps } from '../types/type-input.js';
+import { CONTINENTS } from '../constants/continents';
+import { getFirstIntersection } from '../helpers/helper-array';
+import type { HeroTelInputProps } from '../types/type-input';
 
 /***
  * Hook for checking if the props are mismatched.

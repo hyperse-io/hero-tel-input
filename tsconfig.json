@@ -13,7 +13,9 @@
     "jsxImportSource": "react",
     "esModuleInterop": true,
     "noImplicitAny": false,
-    "types": ["@types/node", "vitest/globals"]
+    "types": ["@types/node", "vitest/globals"],
+    "module": "ESNext",
+    "moduleResolution": "bundler"
   },
   "exclude": [
     "**/node_modules",
