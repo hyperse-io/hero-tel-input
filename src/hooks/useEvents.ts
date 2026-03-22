@@ -1,8 +1,10 @@
 import type React from 'react';
-import type { InputProps } from '@heroui/react';
-import { putCursorAtEndOfInput } from '../helpers/helper-dom.js';
+import { putCursorAtEndOfInput } from '../helpers/helper-dom';
 
-type Options = Pick<InputProps, 'onDoubleClick' | 'onCopy' | 'onFocus'> & {
+type Options = Pick<
+  React.HTMLAttributes<HTMLInputElement>,
+  'onDoubleClick' | 'onCopy' | 'onFocus'
+> & {
   inputRef: React.RefObject<HTMLInputElement | null>;
 };
 

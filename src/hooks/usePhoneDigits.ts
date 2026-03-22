@@ -1,18 +1,18 @@
 import React from 'react';
 import { AsYouType } from 'libphonenumber-js';
-import type { HeroTelInputContinent } from '../constants/continents.js';
-import { COUNTRIES, type HeroTelInputCountry } from '../constants/countries.js';
-import { matchIsArray } from '../helpers/helper-array.js';
+import type { HeroTelInputContinent } from '../constants/continents';
+import { COUNTRIES, type HeroTelInputCountry } from '../constants/countries';
+import { matchIsArray } from '../helpers/helper-array';
 import {
   getCallingCodeOfCountry,
   matchContinentsIncludeCountry,
-} from '../helpers/helper-country.js';
-import { removeOccurrence } from '../helpers/helper-string.js';
+} from '../helpers/helper-country';
+import { removeOccurrence } from '../helpers/helper-string';
 import type {
   HeroTelInputInfo,
   HeroTelInputOnChange,
   HeroTelInputReason,
-} from '../types/index.js';
+} from '../types/index';
 
 type UsePhoneDigitsParams = {
   value: string;

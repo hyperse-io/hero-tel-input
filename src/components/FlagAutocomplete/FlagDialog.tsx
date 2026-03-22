@@ -23,7 +23,10 @@ export const FlagDialog = (props: FlagDialogProps) => {
   const { classNames, children } = props;
   const { dialog } = classNames || {};
   return (
-    <Dialog className={cn('relative', 'outline-hidden', dialog)}>
+    <Dialog
+      aria-label="Select country"
+      className={cn('relative', 'outline-hidden', dialog)}
+    >
       {children}
     </Dialog>
   );
@@ -35,7 +38,7 @@ export const FlagDialogContent = (props: FlagDialogContentProps) => {
   return (
     <div
       className={cn(
-        'bg-content2 flex w-[95vw] max-w-full flex-col gap-1 rounded-xl p-2 shadow-lg sm:w-[500px]',
+        'bg-overlay shadow-overlay flex w-[95vw] max-w-full flex-col gap-1 rounded-xl p-2 sm:w-[500px]',
         dialogContent
       )}
     >

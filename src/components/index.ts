@@ -1,1 +1,1 @@
-export * from './FlagAutocomplete/index.js';
+export * from './FlagAutocomplete/index';

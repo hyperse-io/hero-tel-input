@@ -1,11 +1,11 @@
 'use client';
 
 import { Button, type ButtonProps, cn } from '@heroui/react';
-import type { HeroTelInputCountry } from '../../constants/countries.js';
-import { getCallingCodeOfCountry } from '../../helpers/helper-country.js';
-import { Flag } from '../Flag/Flag.js';
+import type { HeroTelInputCountry } from '../../constants/countries';
+import { getCallingCodeOfCountry } from '../../helpers/helper-country';
+import { Flag } from '../Flag/Flag';
 
-export type FlagButtonProps = ButtonProps & {
+export type FlagButtonProps = Omit<ButtonProps, 'children'> & {
   isoCode: HeroTelInputCountry | null;
   forceCallingCode?: boolean;
   langOfCountryName?: Intl.LocalesArgument;
@@ -28,16 +28,22 @@ export const FlagButton = (props: FlagButtonProps) => {
     <Flag isoCode={isoCode} unknownFlagElement={unknownFlagElement} />
   );
 
+  const ariaLabel = isoCode ? `Selected country: ${isoCode}` : 'Select country';
+
   return (
     <>
       {disableDropdown && (
         <Button
-          tabIndex={-1}
-          variant="light"
+          excludeFromTabOrder
+          aria-label={ariaLabel}
+          variant="ghost"
           size="sm"
-          className={cn('min-w-10 flex-shrink-0 px-1', className)}
-          startContent={flagElement}
+          className={cn(
+            'min-w-10 shrink-0 px-1 hover:bg-transparent',
+            className
+          )}
         >
+          {flagElement}
           {forceCallingCode && isoCode ? (
             <span>+{getCallingCodeOfCountry(isoCode)}</span>
           ) : null}
@@ -45,12 +51,16 @@ export const FlagButton = (props: FlagButtonProps) => {
       )}
       {!disableDropdown && (
         <Button
-          variant="light"
+          aria-label={ariaLabel}
+          variant="ghost"
           size="sm"
-          className={cn('min-w-10 flex-shrink-0 px-1', className)}
-          startContent={flagElement}
+          className={cn(
+            'min-w-10 shrink-0 px-1 hover:bg-transparent',
+            className
+          )}
           {...rest}
         >
+          {flagElement}
           {forceCallingCode && isoCode ? (
             <span>+{getCallingCodeOfCountry(isoCode)}</span>
           ) : null}

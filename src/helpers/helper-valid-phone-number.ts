@@ -1,11 +1,11 @@
 import { AsYouType, isValidPhoneNumber } from 'libphonenumber-js';
-import type { HeroTelInputContinent } from '../constants/continents.js';
-import type { HeroTelInputCountry } from '../constants/countries.js';
+import type { HeroTelInputContinent } from '../constants/continents';
+import type { HeroTelInputCountry } from '../constants/countries';
 import {
   excludeCountries,
   getOnlyCountries,
   matchContinentsIncludeCountry,
-} from './helper-country.js';
+} from './helper-country';
 
 /***
  * Match if the phone number is valid.

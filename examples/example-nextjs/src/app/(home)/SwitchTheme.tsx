@@ -55,15 +55,14 @@ export default function SwitchTheme() {
   return (
     <Button
       isIconOnly
-      radius="full"
-      variant="bordered"
+      variant="secondary"
       aria-label={
         theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
       }
       title={
         theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'
       }
-      className="p-0"
+      className="rounded-full p-0"
       onPress={() => {
         setTheme(theme === 'light' ? 'dark' : 'light');
       }}

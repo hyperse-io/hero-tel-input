@@ -1,9 +1,8 @@
 @import 'tailwindcss';
+@import '@heroui/styles';
 @plugin "tailwindcss-react-aria-components";
 @plugin "tailwindcss-animate";
-@plugin '../theme/hero.ts';
 
-/* Note: You may need to change the path to fit your project structure */
-@source '../../node_modules/**/*.{js,ts,jsx,tsx}';
 @source '../../src/**/*.{js,ts,jsx,tsx}';
+@source '../../../../src/**/*.{js,ts,jsx,tsx}';
 @custom-variant dark (&:where(.dark, .dark *));

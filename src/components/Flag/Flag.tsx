@@ -1,9 +1,8 @@
 'use client';
 
 import { useMemo } from 'react';
-import { Avatar } from '@heroui/react';
-import type { HeroTelInputCountry } from '../../constants/countries.js';
-import { getDefaultImageSrc } from '../../helpers/helper-flag.js';
+import type { HeroTelInputCountry } from '../../constants/countries';
+import { getDefaultImageSrc } from '../../helpers/helper-flag';
 
 export type FlagProps = {
   isoCode: HeroTelInputCountry | null;
@@ -17,11 +16,13 @@ export const Flag = (props: FlagProps) => {
       return unknownFlagElement;
     }
     return (
-      <Avatar
-        alt={isoCode}
-        className="h-fit w-[32px] shrink-0 rounded-none object-cover"
-        size="sm"
+      <img
+        className="shrink-0 rounded-none object-cover"
+        width={32}
+        height={24}
         src={getDefaultImageSrc(isoCode)}
+        alt={isoCode}
+        loading="lazy"
       />
     );
   }, [isoCode, unknownFlagElement]);

@@ -22,7 +22,7 @@ export const FlagModal = (props: FlagModalProps) => {
             'animate-out zoom-out-95 duration-200 ease-in': isExiting,
           },
           modal
-        )
+        ) ?? ''
       }
     >
       {children}

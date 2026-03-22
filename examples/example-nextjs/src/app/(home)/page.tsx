@@ -3,14 +3,7 @@
 import { useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import z from 'zod/v3';
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Chip,
-} from '@heroui/react';
+import { Button, Card, Chip } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { HeroTelInput, matchIsValidTel } from '@hyperse/hero-tel-input';
 import { HeroTelInputComponent } from './HeroTelInput';
@@ -47,17 +40,17 @@ export default function Pages() {
   return (
     <>
       <div className="flex h-full w-full flex-col items-center justify-center gap-8 overflow-auto p-12">
-        <div className="flex w-full flex-row items-center justify-center gap-4">
-          <Chip color="primary" variant="flat">
+        <div className="flex w-full flex-row items-center justify-center gap-4 bg-red-400">
+          <Chip color="accent" variant="soft">
             Hyperse Tel Input with HeroUI
           </Chip>
           <SwitchTheme />
         </div>
-        <Card className="w-full" shadow="sm">
-          <CardHeader>
-            <p className="text-sm font-medium">With Form</p>
-          </CardHeader>
-          <CardBody>
+        <Card className="w-full shadow-sm">
+          <Card.Header>
+            <Card.Title>With Form</Card.Title>
+          </Card.Header>
+          <Card.Content>
             <form
               className="flex w-full flex-col gap-3"
               onSubmit={handleSubmit(onSubmit)}
@@ -81,16 +74,16 @@ export default function Pages() {
                   />
                 )}
               />
-              <Button className="w-full" color="primary" type="submit">
+              <Button className="w-full" variant="primary" type="submit">
                 Submit
               </Button>
             </form>
-          </CardBody>
-          <CardFooter>
+          </Card.Content>
+          <Card.Footer>
             <p className="text-sm font-medium">
               Result: {JSON.stringify(result)}
             </p>
-          </CardFooter>
+          </Card.Footer>
         </Card>
         <HeroTelInputComponent label="empty props" />
         <HeroTelInputComponent

@@ -1,4 +1,4 @@
-import type { HeroTelInputCountry } from './countries.js';
+import type { HeroTelInputCountry } from './countries';
 
 export type HeroTelInputContinent = 'EU' | 'AS' | 'NA' | 'SA' | 'OC' | 'AF';
 

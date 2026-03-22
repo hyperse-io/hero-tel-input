@@ -1,5 +1,5 @@
 import type React from 'react';
-import { matchIsObject } from './helper-object.js';
+import { matchIsObject } from './helper-object';
 
 /***
  * Convert refs to an array of refs.

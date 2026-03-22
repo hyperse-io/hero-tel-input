@@ -7,32 +7,29 @@ import {
   Menu,
   useFilter,
 } from 'react-aria-components';
-import type { HeroTelInputContinent } from '../../constants/continents.js';
-import {
-  type HeroTelInputCountry,
-  ISO_CODES,
-} from '../../constants/countries.js';
-import { DEFAULT_LANG } from '../../constants/lang.js';
-import { filterCountries } from '../../helpers/helper-country.js';
-import { getDisplayNames } from '../../helpers/helper-intl.js';
-import { FlagButton } from '../FlagButton/FlagButton.js';
+import type { HeroTelInputContinent } from '../../constants/continents';
+import { type HeroTelInputCountry, ISO_CODES } from '../../constants/countries';
+import { DEFAULT_LANG } from '../../constants/lang';
+import { filterCountries } from '../../helpers/helper-country';
+import { getDisplayNames } from '../../helpers/helper-intl';
+import { FlagButton } from '../FlagButton/FlagButton';
 import {
   FlagDialog,
   type FlagDialogClassNames,
   FlagDialogContent,
   type FlagDialogContentClassNames,
-} from './FlagDialog.js';
-import { FlagMenuItem, type FlagMenuItemClassNames } from './FlagMenuItem.js';
-import { FlagModal, type FlagModalClassNames } from './FlagModal.js';
+} from './FlagDialog';
+import { FlagMenuItem, type FlagMenuItemClassNames } from './FlagMenuItem';
+import { FlagModal, type FlagModalClassNames } from './FlagModal';
 import {
   FlagModalOverlay,
   type FlagModalOverlayClassNames,
-} from './FlagModalOverlay.js';
+} from './FlagModalOverlay';
 import {
   FlagSearchField,
   type FlagSearchFieldClassNames,
   type FlagSearchFieldProps,
-} from './FlagSearchField.js';
+} from './FlagSearchField';
 
 export type FlagAutocompleteClassNames = FlagDialogClassNames &
   FlagDialogContentClassNames &
@@ -140,6 +137,7 @@ export const FlagAutocomplete = (props: FlagAutocompleteProps) => {
                     searchPlaceholder={searchPlaceholder}
                   />
                   <Menu
+                    aria-label="Country list"
                     items={countriesFilteredList}
                     className="mt-2 max-h-[50dvh] overflow-y-auto"
                   >
