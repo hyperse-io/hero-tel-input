@@ -1,5 +1,11 @@
 # @hyperse/hero-tel-input
 
+## 1.0.2
+
+### Patch Changes
+
+- [#6](https://github.com/hyperse-io/hero-tel-input/pull/6) [`4b03aa0`](https://github.com/hyperse-io/hero-tel-input/commit/4b03aa0cd50b963bdda240bcfc872a1d760582c7) Thanks [@tclxshunquan-wang](https://github.com/tclxshunquan-wang)! - chore: update heroui to v3+
+
 ## 1.0.1
 
 ### Patch Changes
