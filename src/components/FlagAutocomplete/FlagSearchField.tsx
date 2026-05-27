@@ -1,5 +1,4 @@
 import { Input, TextField } from 'react-aria-components';
-import { useMediaQuery } from 'usehooks-ts';
 import { cn } from '@heroui/react';
 
 export type FlagSearchFieldProps = {
