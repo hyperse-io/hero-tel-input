@@ -39,7 +39,7 @@
     "examples/example-nextjs"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "build-website": "yarn workspace @hyperse/hero-tel-input-website run build:ghpage",
     "lint": "eslint .",
     "lint-fix": "yarn lint --fix",
@@ -82,8 +82,9 @@
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "tailwindcss": "^4.2.2",
-    "tsup": "^8.5.1",
+    "tsdown": "^0.22.2",
     "typescript": "^6.0.3",
+    "unrun": "^0.3.1",
     "vite": "^8.0.16",
     "vitest": "^4.1.9"
   },
