@@ -49,7 +49,7 @@ export const FlagMenuItem = (props: FlagMenuItemProps) => {
           <span className="truncate">{name}</span>
         </div>
         {isoCode && (
-          <span className="min-w-8 flex-shrink-0 text-end text-sm">
+          <span className="min-w-8 shrink-0 text-end text-sm">
             +{COUNTRIES[isoCode]?.[0]}
           </span>
         )}

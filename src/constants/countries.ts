@@ -1,8 +1,8 @@
 import type { MetadataJson } from 'libphonenumber-js';
-import metadatas from 'libphonenumber-js/metadata.min.json';
+import metaData from 'libphonenumber-js/metadata.min.json';
 import { getObjectKeys } from '../helpers/helper-object';
 
-export const COUNTRIES: MetadataJson['countries'] = metadatas.countries;
+export const COUNTRIES: MetadataJson['countries'] = metaData.countries;
 
 export const ISO_CODES = getObjectKeys(COUNTRIES);
 

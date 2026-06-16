@@ -21,32 +21,32 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@heroui/react": "^3.0.1",
-    "@hookform/resolvers": "^5.2.2",
+    "@heroui/react": "^3.2.0",
+    "@hookform/resolvers": "^5.4.0",
     "@hyperse/hero-tel-input": "*",
-    "next": "^16.2.1",
+    "next": "^16.2.9",
     "next-themes": "^0.4.6",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-hook-form": "^7.72.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-hook-form": "^7.79.0",
     "react-refresh": "^0.18.0",
-    "zod": "^4.3.6"
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "@hyperse/eslint-config-hyperse": "^1.6.0",
+    "@hyperse/eslint-config-hyperse": "^1.7.3",
     "@hyperse/next-config": "^1.0.7",
-    "@tailwindcss/postcss": "^4.2.2",
-    "@types/node": "25.5.0",
-    "@types/react": "^19.2.14",
+    "@tailwindcss/postcss": "^4.3.1",
+    "@types/node": "25.9.3",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@zthxxx/tsconfig": "1.0.5",
-    "eslint": "^10.1.0",
-    "postcss": "^8.5.8",
-    "tailwindcss": "^4.2.2",
+    "eslint": "^10.5.0",
+    "postcss": "^8.5.15",
+    "tailwindcss": "^4.3.1",
     "tailwindcss-animate": "^1.0.7",
-    "tailwindcss-react-aria-components": "^2.0.1",
+    "tailwindcss-react-aria-components": "^2.1.1",
     "ts-node": "10.9.2",
-    "typescript": "5.9.3"
+    "typescript": "6.0.3"
   },
   "browserslist": {
     "production": [
