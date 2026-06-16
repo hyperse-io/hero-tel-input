@@ -3,7 +3,6 @@
 import type { FC } from 'react';
 import { Link } from 'nextra-theme-docs';
 import { Feature, Features } from '@/components/Features';
-import { Card } from '@heroui/react';
 import { HeroTelInput } from '@hyperse/hero-tel-input/index.js';
 import { Icon } from '@iconify/react';
 import styles from './page.module.css';

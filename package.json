@@ -39,7 +39,7 @@
     "examples/example-nextjs"
   ],
   "scripts": {
-    "build": "tsup",
+    "build": "tsdown",
     "build-website": "yarn workspace @hyperse/hero-tel-input-website run build:ghpage",
     "lint": "eslint .",
     "lint-fix": "yarn lint --fix",
@@ -58,40 +58,41 @@
     }
   },
   "dependencies": {
-    "libphonenumber-js": "^1.12.40",
-    "react-aria-components": "^1.16.0",
+    "libphonenumber-js": "^1.13.6",
+    "react-aria-components": "^1.18.0",
     "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "0.6.0",
-    "@changesets/cli": "2.30.0",
-    "@commitlint/cli": "20.5.0",
-    "@commitlint/config-conventional": "20.5.0",
-    "@heroui/react": "^3.0.1",
-    "@hyperse/eslint-config-hyperse": "^1.6.0",
+    "@changesets/changelog-github": "0.7.0",
+    "@changesets/cli": "2.31.0",
+    "@commitlint/cli": "21.0.2",
+    "@commitlint/config-conventional": "21.0.2",
+    "@heroui/react": "^3.2.0",
+    "@hyperse/eslint-config-hyperse": "^1.7.3",
     "@hyperse/exec-program": "^1.2.1",
-    "@types/node": "^25.5.0",
-    "@types/react": "^19.2.14",
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "commitizen": "4.3.1",
+    "commitizen": "4.3.2",
     "cz-conventional-changelog": "3.3.0",
-    "eslint": "^10.1.0",
+    "eslint": "^10.5.0",
     "husky": "9.1.7",
-    "lint-staged": "16.4.0",
+    "lint-staged": "17.0.7",
     "npm-run-all": "^4.1.5",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "tailwindcss": "^4.2.2",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vite": "^8.0.1",
-    "vitest": "^4.1.0"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.1",
+    "tsdown": "^0.22.2",
+    "typescript": "^6.0.3",
+    "unrun": "^0.3.1",
+    "vite": "^8.0.16",
+    "vitest": "^4.1.9"
   },
   "peerDependencies": {
-    "@heroui/react": ">=3.0.1",
-    "react": ">=19.2.4",
-    "react-dom": ">=19.2.4",
-    "tailwindcss": ">=4.2.2"
+    "@heroui/react": ">=3.2.0",
+    "react": ">=19.2.7",
+    "react-dom": ">=19.2.7",
+    "tailwindcss": ">=4.3.1"
   },
   "peerDependenciesMeta": {
     "react": {
@@ -104,5 +105,8 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.9.2",
+  "resolutions": {
+    "zod": "4.3.6"
+  }
 }

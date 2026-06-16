@@ -1,5 +1,6 @@
 'use client';
 
+import { useId } from 'react';
 import ReactDOM from 'react-dom';
 import {
   Description,
@@ -38,7 +39,7 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
   const {
     forceCallingCode = false,
     defaultCountry,
-    value = '',
+    value,
     excludedCountries,
     onlyCountries,
     langOfCountryName,
@@ -62,10 +63,13 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     errorMessage,
     description,
     placeholder,
+    id,
     ...rest
   } = props;
 
   const { input, textField, inputGroup, ...restClassNames } = classNames;
+  const generatedId = useId();
+  const inputId = id ?? generatedId;
 
   const validDefaultCountry = forceCallingCode
     ? getValidCountry(defaultCountry)
@@ -82,6 +86,7 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
     forceCallingCode,
     defaultCountry: validDefaultCountry,
     value: value ?? '',
+    isValueControlled: value !== undefined,
     onChange,
     excludedCountries,
     onlyCountries,
@@ -144,7 +149,7 @@ export const HeroTelInput = (props: HeroTelInputProps) => {
           />
         </InputGroup.Prefix>
         <InputGroup.Input
-          id="hero-tel-input"
+          id={inputId}
           type="tel"
           ref={refToRefs([inputRef, propRef])}
           value={validInputValue}

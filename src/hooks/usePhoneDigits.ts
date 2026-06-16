@@ -16,6 +16,7 @@ import type {
 
 type UsePhoneDigitsParams = {
   value: string;
+  isValueControlled: boolean;
   onChange?: HeroTelInputOnChange;
   defaultCountry?: HeroTelInputCountry;
   forceCallingCode: boolean;
@@ -104,6 +105,7 @@ function matchIsIsoCodeAccepted(
 
 export default function usePhoneDigits({
   value,
+  isValueControlled,
   onChange,
   defaultCountry,
   onlyCountries,
@@ -117,7 +119,7 @@ export default function usePhoneDigits({
   );
   const asYouTypeRef = React.useRef<AsYouType>(new AsYouType(defaultCountry));
   const inputRef = React.useRef<HTMLInputElement | null>(null);
-  const [previousDefaultCountry, setPreviousDefaultCountry] = React.useState<
+  const previousDefaultCountryRef = React.useRef<
     HeroTelInputCountry | undefined
   >(defaultCountry);
   const [state, setState] = React.useState<State>(() => {
@@ -129,7 +131,7 @@ export default function usePhoneDigits({
     });
   });
 
-  const [previousValue, setPreviousValue] = React.useState(value);
+  const previousValueRef = React.useRef(value);
 
   const buildInputInfo = (reason: HeroTelInputReason): HeroTelInputInfo => {
     return {
@@ -203,7 +205,7 @@ export default function usePhoneDigits({
         countryCallingCode: null,
         nationalNumber: null,
       });
-      setPreviousValue(numberValue);
+      previousValueRef.current = numberValue;
       setState({
         isoCode: null,
         inputValue: numberValue,
@@ -211,7 +213,7 @@ export default function usePhoneDigits({
     } else {
       const valueToSet = disableFormatting ? numberValue : formattedValue;
       onChange?.(numberValue, phoneInfo);
-      setPreviousValue(valueToSet);
+      previousValueRef.current = numberValue;
       setState({
         isoCode: country,
         inputValue: valueToSet,
@@ -220,47 +222,57 @@ export default function usePhoneDigits({
   };
 
   React.useEffect(() => {
-    if (!value && !previousValue && value !== previousValue) {
-      setPreviousValue(value);
-      const newState = getInitialState({
-        initialValue: value,
-        defaultCountry,
-        forceCallingCode,
-        disableFormatting,
-      });
-      previousCountryRef.current = newState.isoCode;
-      setState(newState);
+    if (!isValueControlled || value === previousValueRef.current) {
+      return;
     }
+
+    asYouTypeRef.current = new AsYouType(defaultCountry);
+    const newState = getInitialState({
+      initialValue: value,
+      defaultCountry,
+      forceCallingCode,
+      disableFormatting,
+    });
+
+    asYouTypeRef.current.input(newState.inputValue);
+    previousValueRef.current = value;
+    previousCountryRef.current = newState.isoCode;
+    setState(newState);
   }, [
     value,
-    previousValue,
+    isValueControlled,
     defaultCountry,
     forceCallingCode,
     disableFormatting,
   ]);
 
   React.useEffect(() => {
-    if (defaultCountry !== previousDefaultCountry) {
-      setPreviousDefaultCountry(defaultCountry);
-      asYouTypeRef.current = new AsYouType(defaultCountry);
-      const { inputValue, isoCode } = getInitialState({
-        initialValue: '',
-        defaultCountry,
-        forceCallingCode,
-        disableFormatting,
-      });
-      setPreviousValue(inputValue);
-      asYouTypeRef.current.input(inputValue);
-      previousCountryRef.current = asYouTypeRef.current.getCountry() || null;
-      onChange?.(inputValue, buildInputInfo('country'));
-      setState({
-        inputValue,
-        isoCode,
-      });
+    if (defaultCountry === previousDefaultCountryRef.current) {
+      return;
     }
+
+    previousDefaultCountryRef.current = defaultCountry;
+    asYouTypeRef.current = new AsYouType(defaultCountry);
+    const { inputValue, isoCode } = getInitialState({
+      initialValue: isValueControlled ? value : '',
+      defaultCountry,
+      forceCallingCode,
+      disableFormatting,
+    });
+    asYouTypeRef.current.input(inputValue);
+    const numberValue = asYouTypeRef.current.getNumberValue() || '';
+
+    previousValueRef.current = numberValue;
+    previousCountryRef.current = asYouTypeRef.current.getCountry() || isoCode;
+    onChange?.(numberValue, buildInputInfo('country'));
+    setState({
+      inputValue,
+      isoCode,
+    });
   }, [
     defaultCountry,
-    previousDefaultCountry,
+    value,
+    isValueControlled,
     onChange,
     forceCallingCode,
     disableFormatting,
@@ -290,14 +302,15 @@ export default function usePhoneDigits({
     if (!disableFormatting) {
       newValue = typeNewValue(newValue);
     }
+    const numberValue = asYouTypeRef.current.getNumberValue() || newValue;
 
-    onChange?.(newValue, {
+    onChange?.(numberValue, {
       ...buildInputInfo('country'),
       // Some country have the same calling code, so we choose what the user has selected
       countryCode: newCountry,
     });
     previousCountryRef.current = newCountry;
-    setPreviousValue(newValue);
+    previousValueRef.current = numberValue;
     setState({
       isoCode: newCountry,
       inputValue: newValue,
