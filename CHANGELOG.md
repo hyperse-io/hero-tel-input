@@ -1,5 +1,11 @@
 # @hyperse/hero-tel-input
 
+## 1.0.3
+
+### Patch Changes
+
+- [#10](https://github.com/hyperse-io/hero-tel-input/pull/10) [`0828193`](https://github.com/hyperse-io/hero-tel-input/commit/08281936872373e8a0c79c288787238df4f7fb9f) Thanks [@ShunquanWang](https://github.com/ShunquanWang)! - chore: update package dependencies and improve HeroTelInput component
+
 ## 1.0.2
 
 ### Patch Changes
