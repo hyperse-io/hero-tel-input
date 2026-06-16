@@ -1,5 +1,12 @@
 # @hyperse/hero-tel-input-website
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [[`0828193`](https://github.com/hyperse-io/hero-tel-input/commit/08281936872373e8a0c79c288787238df4f7fb9f)]:
+  - @hyperse/hero-tel-input@1.0.3
+
 ## 0.0.4
 
 ### Patch Changes
