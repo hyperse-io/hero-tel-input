@@ -6,5 +6,6 @@ export default defineConfig({
   dts: true,
   sourcemap: true,
   target: 'es2020',
+  fixedExtension: false,
   tsconfig: './tsconfig.build.json',
 });
